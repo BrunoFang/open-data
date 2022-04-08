@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Readme geps datamart fr - MSC Open Data / Données ouvertes du SMC</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">MSC Open Data / <br>Données ouvertes du SMC</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Usage and tutorials / <br>Utilisation et tutoriels <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../usage/readme_en/" class="dropdown-item">Usage overview /<br>Aperçu de l'utilisation</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/tutorial_web-maps_en/" class="dropdown-item">Create interactive web maps /<br>Créer des cartes web interactives</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/tutorial_raw-data_QGIS_en/" class="dropdown-item">Add raw data to QGIS /<br>Ajouter des données brutes à QGIS</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">Use case: anticipated profits based on precipitations probability</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/tutorial_OAFeat_QGIS_en/" class="dropdown-item">Use OGC API - Features in QGIS /<br>Utiliser OGC API - Features dans QGIS</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en/" class="dropdown-item">Use case: Retrieving and displaying hydrometric data</a>
+</li>
+                                    
+<li>
+    <a href="../../../usage/tutorial_gdal/tutorial_gdal_en/" class="dropdown-item">Use GDAL commands /<br>Utiliser des commandes GDAL</a>
+</li>
+                                    
+<li>
+    <a href="../../../msc-geomet/web-services_en/" class="dropdown-item">API technical doc /<br>Doc technique de l'API</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../readme_en/" class="nav-link">Available data /<br>Données disponibles</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data access /<br>Accès aux données <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../msc-geomet/readme_en/" class="dropdown-item">MSC GeoMet /<br>GeoMet du SMC</a>
+</li>
+                                    
+<li>
+    <a href="../../../msc-datamart/readme_en/" class="dropdown-item">MSC Datamart /<br>Datamart du SMC</a>
+</li>
+                                    
+<li>
+    <a href="../../../cost-recovered/readme_en/" class="dropdown-item">Cost-recovered services /<br>Services à recouvrement de coûts</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://weather.gc.ca/mainmenu/contact_us_e.html" class="nav-link">Contact us /<br>Contactez-nous</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search /<br> <i class="fa fa-fw"></i>Rechercher
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#donnees-grib2-du-systeme-global-de-prevision-densemble-sgpe" class="nav-link">Données GRIB2 du Système global de prévision d'ensemble (SGPE)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#adresse-des-donnees" class="nav-link">Adresse des données</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#specification-technique-de-la-grille" class="nav-link">Spécification technique de la grille</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nomenclature-des-noms-de-fichiers" class="nav-link">Nomenclature des noms de fichiers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#liste-des-variables" class="nav-link">Liste des variables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#support" class="nav-link">Support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#annonces-de-la-liste-de-diffusion-dd_info" class="nav-link">Annonces de la liste de diffusion dd_info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../readme_geps-datamart_en/">In English</a></p>
+<p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
+<p><a href="../../../readme_fr/">TdM</a> &gt; <a href="../../readme_fr/">Données du SMC</a> &gt; <a href="../readme_geps_fr/">SGPE</a> &gt; SGPE sur le Datamart du SMC</p>
+<h1 id="donnees-grib2-du-systeme-global-de-prevision-densemble-sgpe">Données GRIB2 du Système global de prévision d'ensemble (SGPE)</h1>
+<p>Cette page décrit les données du <a href="../readme_geps_fr/">Système global de prévision d'ensemble</a> disponibles en format GRIB2.</p>
+<h2 id="adresse-des-donnees">Adresse des données</h2>
+<p>Les données du Datamart du SMC peuvent être <a href="../../../msc-datamart/amqp_fr/">automatiquement récupérées avec le Protocole avancé de mise en file d'attente des messages (AMQP)</a> dès qu'elles deviennent disponibles. Un <a href="../../../usage/readme_fr/">survol et exemples pour accéder et utiliser les données ouvertes du Service météorologique du Canada</a> est également disponible.</p>
+<p>Les données sont disponibles via le protocole HTTPS. Il est possible d’y accéder avec un fureteur standard. Dans ce cas, on obtient une liste de liens donnant accès à un fichier GRIB2. </p>
+<p>Les données sont accessibles aux adresses suivantes :</p>
+<ul>
+<li><a href="https://dd.meteo.gc.ca/ensemble/geps/grib2">https://dd.meteo.gc.ca/ensemble/geps/grib2/{TYPE}/{HH}/{hhh}/</a></li>
+</ul>
+<p>où :</p>
+<ul>
+<li><strong>TYPE</strong> : Chaîne de caractères indiquant les membres individuels issus des sorties directes de modèle (pas de traitement) ou les produits probabilistes créés à partir des membres individuels [raw, products]</li>
+<li><strong>raw</strong> : Chaîne de caractères constante indiquant les sorties brutes du modèle</li>
+<li><strong>HH</strong> : Heure UTC du début de la passe du modèle [00, 12]</li>
+<li><strong>hhh</strong> : Heure de prévision [000, 003, 006, ..., 192, 198, 204, ..., 378, 384] et [000, 003, …, 192, 198, 204, ..., 762, 768] chaque jeudi à 000UTC</li>
+</ul>
+<h2 id="specification-technique-de-la-grille">Spécification technique de la grille</h2>
+<p>Ce tableau décrit des paramètres de la grille latitude-longitude sur laquelle les variables en format GRIB sont disponibles.</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre de la grille</th>
+<th>Valeur du paramètre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ni</td>
+<td>720 points</td>
+</tr>
+<tr>
+<td>nj</td>
+<td>361 points</td>
+</tr>
+<tr>
+<td>résolution</td>
+<td>0,5°</td>
+</tr>
+<tr>
+<td>coordonnées du premier point de grille</td>
+<td>90° S  000° E</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nomenclature-des-noms-de-fichiers">Nomenclature des noms de fichiers</h2>
+<p>NOTE : TOUTES LES HEURES SONT EN UTC.</p>
+<p>Les fichiers ont la nomenclature suivante :</p>
+<ul>
+<li>CMC_geps-raw_Variable_TypedeNiveau_Niveau_latlonResolution_YYYYMMDDHH_Phhh_allmbrs.grib2</li>
+<li>CMC_geps-prob_Variable_TypedeNiveau_Niveau_latlonResolution_YYYYMMDDHH_Phhh_all-products.grib2</li>
+</ul>
+<p>où :</p>
+<ul>
+<li><strong>CMC_geps</strong> : Chaîne de caractères constante indiquant que le Centre météorologique canadien (CMC) émet les prévisions, le modèle (geps : Global Ensemble Prediction System).</li>
+<li><strong>raw</strong> : sorties brutes des membres individuels </li>
+<li><strong>prob</strong> : produits probabilistes générés à partir de tous les membres</li>
+<li><strong>Resolution</strong> : Chaîne de caractères constante indiquant la résolution des données (0p5x0p5).</li>
+<li><strong>Variable</strong> : Type de variable contenu dans le fichier. Pour voir la liste complète, consultez la section « Description des variables ».</li>
+<li><strong>TypedeNiveau</strong> : Type de niveau. Pour voir la liste complète, consultez la section « Description des variables ».</li>
+<li><strong>Niveau</strong> : Valeur du niveau. Pour voir la liste complète, consultez la section « Description des variables ».</li>
+<li><strong>YYYYMMDD</strong> : Année, mois et jour du début de la prévision.</li>
+<li><strong>HH</strong> : Heure UTC de la passe [00, 12].</li>
+<li><strong>Phhh</strong> : « P » est un caractère constant. « hhh » représente l’heure de prévision [000, 003, …, 192, 198, 204, ..., 378, 384], ou [000, 003, …, 192, 198, 204, ..., 762, 768] chaque jeudi à 000UTC.</li>
+<li><strong>allmbrs</strong> : Chaîne de caractères constante indiquant que tous les membres sont inclus dans le fichier.</li>
+<li><strong>all-products</strong> : Indique que tous les produits probabilistes pour cette variable sont regroupés dans ce fichier</li>
+<li><strong>grib2</strong> : Chaîne de caractères constante indiquant que le format est GRIB2.</li>
+</ul>
+<p>Exemple de nom de fichier :</p>
+<p>CMC_geps-raw_UGRD_ISBL_0925_latlon0p5x0p5_2010090100_P078_allmbrs.grib2</p>
+<p>Les données dans le fichier débutent le 1 septembre 2010 à 00Z (2010090100). Il a été créé par le CMC et contient les données brutes du Système global de prévision d'ensemble (CMC_geps-raw). Il contient les composantes du vent selon U (UGRD), au niveau isobarique 925 mb (ISBL_0925), à l’heure de prévision 78 (P078), pour tous les membres de l’ensemble (allmbrs), le tout en format GRIB2 (.grib2).</p>
+<h2 id="liste-des-variables">Liste des variables</h2>
+<p>Les variables pour les produits d'ensemble disponibles dans les fichiers GRIB2 sont décrites ci-dessous. Pour chaque variable, la définition, la période et la fréquence de disponibilité sont mentionnées.</p>
+<p>Pour les membres individuels:</p>
+<ul>
+<li><strong>AFRAIN_SFC_0</strong>              : Accumulation de pluie verglaçante : 0-384h à chaque 3h</li>
+<li><strong>AICEP_SFC_0</strong>               : Accumulation de grésil : 0-384h à chaque 3h</li>
+<li><strong>APCP_SFC_0</strong>                : Accumulation de précipitations totales : 0-384h à chaque 3h</li>
+<li><strong>ARAIN_SFC_0</strong>               : Accumulation de pluie : 0-384h à chaque 3h</li>
+<li><strong>ASNOW_SFC_0</strong>               : Accumulation de neige : 0-384h à chaque 3h</li>
+<li><strong>CAPE_SFC_0</strong>                : Énergie potentielle convective disponible : 0-384h à chaque 3h</li>
+<li><strong>CIN_SFC_0</strong>                 : Énergie d'inhibition de la convection : 0-384h à chaque 3h</li>
+<li><strong>DLWRF_SFC_0</strong>               : Flux radiatif d'ondes longues descendant : 0-384h à chaque 3h</li>
+<li><strong>DSWRF_SFC_0</strong>               : Flux radiatif d'ondes courtes descendant  : 0-384h à chaque 3h</li>
+<li><strong>HGT_ISBL_XXXX</strong>             : Hauteur du géopotentiel à XXXX hPa : 0-384h à chaque 3h</li>
+<li><strong>HGT_SFC_0</strong>                 : Hauteur du géopotentiel à la surface : 0-384h à chaque 3h</li>
+<li><strong>ICETK_SFC_0</strong>               : Épaisseur de la glace : 0-384h à chaque 3h</li>
+<li><strong>LHTFL_SFC_0</strong>               : Flux de chaleur latente à la surface : 0-384h à chaque 3h</li>
+<li><strong>OLR_NTAT_0</strong>                : Flux a ondes longues sortant au sommet de l'atmosphère : 0-384h à chaque 3h</li>
+<li><strong>PRES_SFC_0</strong>                : Pression à la surface : 0-384h à chaque 3h</li>
+<li><strong>PRMSL_MSL_0</strong>               : Pression au niveau de la mer : 0-384h à chaque 3h</li>
+<li><strong>PWAT_EATM_0</strong>               : Eau précipitable sur la colonne entière : 0-384h à chaque 3h</li>
+<li><strong>RH_ISBL_XXXX</strong>              : Humidité relative à XXXX hPa : 0-384h à chaque 3h</li>
+<li><strong>RH_TGL_2m</strong>                 : Humidité relative 2m au-dessus du sol : 0-384h à chaque 3h</li>
+<li><strong>SHTFL_SFC_0</strong>               : Flux de chaleur latente à la surface : 0-384h à chaque 3h</li>
+<li><strong>SNOD_SFC_0</strong>                : Épaisseur de neige à la surface : 0-384h à chaque 3h</li>
+<li><strong>SWAT_DBLL_10cm</strong>            : Contenu d'eau volumétrique au sol 0-10cm sous la surface : 0-384h à chaque 3h</li>
+<li><strong>VSOILM_DBLL_10cm</strong>          : Contenu d'eau volumétrique au sol 0-10cm sous la surface : 0-384h à chaque 3h</li>
+<li><strong>TCDC_SFC_0</strong>                : Couverture nuageuse : 0-384h à chaque 3h</li>
+<li><strong>TMAX_TGL_2m</strong>               : Température maximale 2m au-dessus du sol : 0-384h à chaque 3h</li>
+<li><strong>TMIN_TGL_2m</strong>               : Température minimale 2m au-dessus du sol : 0-384h à chaque 3h</li>
+<li><strong>TMP_ISBL_XXXX</strong>             : Température à XXXX hPa : 0-384h à chaque 3h</li>
+<li><strong>TMP_TGL_2m</strong>                : Température 2m au-dessus du sol : 0-384h à chaque 3h</li>
+<li><strong>TSOIL_DBLL_10cm</strong>           : Température du sol 0-10cm sous la surface : 0-384h à chaque 3h</li>
+<li><strong>UGRD_ISBL_XXXX</strong>            : Composante U du vent à XXXX hPa : 0-384h à chaque 3h</li>
+<li><strong>UGRD_TGL_10m</strong>              : Composante U du vent 10m au-dessus du sol : 0-384h à chaque 3h</li>
+<li><strong>ULWRF_SFC_0</strong>               : Flux d'ondes longues vers le haut à la surface : 0-384h à chaque 3h</li>
+<li><strong>USWRF_SFC_0</strong>               : Flux d'ondes courtes vers le haut à la surface : 0-384h à chaque 3h</li>
+<li><strong>VGRD_ISBL_XXXX</strong>            : Composante V du vent à XXXX hPa : 0-384h à chaque 3h</li>
+<li><strong>VGRD_TGL_10m</strong>              : Composante V du vent 10m au-dessus du sol : 0-384h à chaque 3h</li>
+<li><strong>VVEL_ISBL_XXXX</strong>            : Mouvement vertical at XXXX hPa : 0-384h à chaque 3h</li>
+<li><strong>WEASD_SFC_0</strong>               : Neige en équivalent eau à la surface : 0-384h à chaque 3h</li>
+</ul>
+<p>Pour les produits probabilistes:</p>
+<ul>
+<li><strong>FPRATE-Accum-12h_SFC_0</strong>    : Pluie verglaçante accumulée sur une période de 12h : 12h-384h à chaque 12h</li>
+<li><strong>FPRATE-Accum-24h_SFC_0</strong>    : Pluie verglaçante accumulée sur une période de 24h : 24h-384h à chaque 12h</li>
+<li><strong>HEATX-Max-24h_TGL_2m</strong>      : Humidex 2m au-dessus du sol - Maximum sur une période de 24h : 24h-384h à chaque 24h</li>
+<li><strong>HEATX_TGL_2m</strong>              : Humidex 2m au-dessus du sol : 3-384h à chaque 3h</li>
+<li><strong>HGT_ISBL_0500</strong>               : Hauteur du géopotentiel 500 hPa : 12-384h à chaque 12h</li>
+<li><strong>IPRATE-Accum-12h_SFC_0</strong>    : Grésil accumulé sur une période de 12h : 12h-384h à chaque 12h</li>
+<li><strong>IPRATE-Accum-24h_SFC_0</strong>    : Grésil accumulé sur une période de 24h : 24h-384h à chaque 12h</li>
+<li><strong>PRMSL_MSL_0</strong>              : Pression au niveau de la mer : 3-384h à chaque 12h</li>
+<li><strong>RPRATE-Accum-12h_SFC_0</strong>    : Pluie accumulée sur une période de 12h : 12h-384h à chaque 12h</li>
+<li><strong>RPRATE-Accum-24h_SFC_0</strong>    : Pluie accumulée sur une période de 24h : 24h-384h à chaque 12h</li>
+<li><strong>SPRATE-Accum-12h_SFC_0</strong>    : Neige (équivalent en eau) accumulée sur une période de 12h : 12h-384h à chaque 12h</li>
+<li><strong>SPRATE-Accum-24h_SFC_0</strong>    : Neige (équivalent en eau) accumulée sur une période de 24h : 24h-384h à chaque 12h</li>
+<li><strong>TCDC_SFC_0</strong>                : Couverture nuageuse : 3-384h à chaque 3h</li>
+<li><strong>TEMP-Max-24h_TGL_2m</strong>       : Température 2m au-dessus du sol - Maximum sur une période de 24h : 24h-384h à chaque 24h</li>
+<li><strong>TEMP-Min-24h_TGL_2m</strong>       : Température 2m au-dessus du sol - Minimum sur une période de 24h : 24h-384h à chaque 24h</li>
+<li><strong>TEMP_TGL_2m</strong>               : Température 2m au-dessus du sol : 3-384h à chaque 3h</li>
+<li><strong>TPRATE-Accum-120h_SFC_0</strong>   : Précipitations totales accumulées sur une période de 120h : 120h-384h à chaque 24h</li>
+<li><strong>TPRATE-Accum-12h_SFC_0</strong>    : Précipitations totales accumulées sur une période de 12h : 12h-384h à chaque 12h</li>
+<li><strong>TPRATE-Accum-24h_SFC_0</strong>    : Précipitations totales accumulées sur une période de 24h : 24h-384h à chaque 12h</li>
+<li><strong>TPRATE-Accum-48h_SFC_0</strong>    : Précipitations totales accumulées sur une période de 48h : 48h-384h à chaque 24h</li>
+<li><strong>TPRATE-Accum-72h_SFC_0</strong>    : Précipitations totales accumulées sur une période de 72h : 72h-384h à chaque 24h</li>
+<li><strong>TPRATE-Accum-96h_SFC_0</strong>    : Précipitations totales accumulées sur une période de 96h : 96h-384h à chaque 24h</li>
+<li><strong>WCF-Min-24h_TGL_2m</strong>        : Facteur éolien 2m au-dessus du sol - Minimum sur une période de 24h : 24h-384h à chaque 24h</li>
+<li><strong>WCF_TGL_2m</strong>                : Facteur éolien 2m au-dessus du sol : 3-384h à chaque 3h</li>
+<li><strong>WIND-Max-12h_TGL_10m</strong>      : Vitesse du vent 10m au-dessus du sol - Maximum sur une période de 12h : 12h-384h à chaque 12h</li>
+<li><strong>WIND_TGL_10m</strong>              : Vitesse du vent 10m au-dessus du sol : 3-384h à chaque 3h</li>
+</ul>
+<p>Les fichiers contiennent des produits de probabilité par comptage de membre au-dessus ou au-dessous de différents seuils, des percentiles , moyennes, médianes et écarts-types. Notez que les produits et les seuils sont définis dans la méta-information des fichiers.</p>
+<p>Par exemple, pour l’accumulation de précipitation totale sur une période de 12h (TPRATE-Accum-12h), on retrouve les produits suivants :</p>
+<ul>
+<li>Probabilité au-dessus de 2,5,  5,  10 , 15,  20,  25,  30, 40, 50, 75, 100 et 150 mm</li>
+<li>Minimum (percentile 0), maximum (100e percentile), médiane (50e percentile), écart-type et moyenne</li>
+<li>Percentiles additionnels: 10,25,75 et 90 </li>
+</ul>
+<p>Note: Une <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_geps/geps_element.xml">liste en format XML</a> contenant l'information pour toutes les variables, y compris les descriptions et les unités, en français et en anglais est disponible.</p>
+<h2 id="support">Support</h2>
+<p>Pour toute question relative à ces données, merci de nous contacter à l'adresse : <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
+<h2 id="annonces-de-la-liste-de-diffusion-dd_info">Annonces de la liste de diffusion dd_info</h2>
+<p>Les annonces reliées à ce jeu de données sont disponibles via la liste <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/dd_info">dd_info</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                    <br>
+                    Effectuez une recherche dans la documentation en indiquant les termes désirés ci-après.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
