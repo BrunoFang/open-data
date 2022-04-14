@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Readme rdps en - MSC Open Data / Données ouvertes du SMC</title>
+        <title>Readme rdps statpostproc datamart fr - MSC Open Data / Données ouvertes du SMC</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -124,21 +124,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#data-and-products-of-the-regional-deterministic-prediction-system" class="nav-link">Data and products of the Regional Deterministic Prediction System</a>
+            <li class="nav-item" data-level="1"><a href="#donnees-geojson-du-systeme-regional-de-prevision-deterministe-statistiquement-post-traitees" class="nav-link">Données GeoJSON du Système régional de prévision déterministe statistiquement post-traitées</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#access" class="nav-link">Access</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#products" class="nav-link">Products</a>
+            <li class="nav-item" data-level="2"><a href="#adresse-des-donnees" class="nav-link">Adresse des données</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#technical-documentation" class="nav-link">Technical documentation</a>
+            <li class="nav-item" data-level="2"><a href="#specifications-techniques" class="nav-link">Spécifications techniques</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#changelog" class="nav-link">Changelog</a>
+            <li class="nav-item" data-level="2"><a href="#nomenclature-des-noms-de-fichiers" class="nav-link">Nomenclature des noms de fichiers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#liste-des-variables" class="nav-link">Liste des variables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#support" class="nav-link">Support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#annonces-de-la-liste-de-diffusion-dd_info" class="nav-link">Annonces de la liste de diffusion dd_info</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -149,63 +157,61 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p><a href="../readme_rdps_fr/">En français</a></p>
+<p><a href="../readme_rdps-statpostproc-datamart_en/">In English</a></p>
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
-<p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; RDPS</p>
-<h1 id="data-and-products-of-the-regional-deterministic-prediction-system">Data and products of the Regional Deterministic Prediction System</h1>
-<p>The Regional Deterministic Prediction System (RDPS) performs physical calculations to produce deterministic forecasts of elements of the atmosphere from the present day to 84 hours in the future. Elements of the atmosphere include temperature, precipitation, cloud cover, wind speed and direction, and humidity. This product contains the raw numerical results of these calculations. Geographic coverage includes Canada and the United States. The horizontal spatial resolution of the data is 10 km. Data is available for 80 vertical levels. Forecasts are performed four times a day.</p>
-<h2 id="access">Access</h2>
-<h3 id="how-to-access-the-data">How to access the data</h3>
-<p>This data is available on the <a href="../../../msc-datamart/readme_en/">MSC Datamart</a> data server service as well as <a href="../../../msc-geomet/readme_en/">MSC GeoMet</a>:</p>
+<p><a href="../../../readme_fr/">TdM</a> &gt; <a href="../../readme_fr/">Données du SMC</a> &gt; <a href="../readme_rdps_fr/">SRPD</a> &gt; Post-traitement statistique SRPD sur le Datamart du SMC</p>
+<h1 id="donnees-geojson-du-systeme-regional-de-prevision-deterministe-statistiquement-post-traitees">Données GeoJSON du Système régional de prévision déterministe statistiquement post-traitées</h1>
+<p>Le système Updatable Model Output Statistics (UMOS) est un progiciel développé par Environnement et Changement climatique Canada permettant de post-traiter les prévisions brutes des modèles numériques du temps et de l'environnement, incluant le <a href="../readme_rdps_fr.md">Système régional de prévision déterministe (SRPD)</a>, en établissant des relations statistiques optimisées entre les observations enregistrées aux stations et les sorties de modèles numériques. Ces relations sont bâties par l'entremise de la méthode Model Output Statistics (MOS) et par régression linéaire multiple (RLM). Les variables du temps et de l'environnement post-traitées statistiquement incluent la température de l'air et le point de rosée à 1.5 mètres au-dessus de la surface de la terre ou de l'eau ainsi que la vitesse et la direction du vent à 10 mètres au-dessus de la surface de la terre ou de l'eau. La région géographique couverte par ces données inclut le territoire couvert par les stations météorologiques du Canada et quelques bouées américaines. Les prévisions issues du post-traitement statistique sont disponibles à la même fréquence d'émission et au même pas de temps que les modèles numériques produisant les prévisions brutes.</p>
+<h2 id="adresse-des-donnees">Adresse des données</h2>
+<p>Les données du Datamart du SMC peuvent être <a href="../../../msc-datamart/amqp_fr/">automatiquement récupérées avec le protocole avancé de mise en file d'attente des messages (AMQP)</a> dès qu'elles deviennent disponibles. Un <a href="../../../usage/readme_fr/">survol et exemples pour accéder et utiliser les données ouvertes du Service météorologique du Canada</a> est également disponible.</p>
+<p>Les données sont disponibles via le protocole HTTPS. Il est possible d’y accéder avec un fureteur standard. Dans ce cas, on obtient une liste de liens donnant accès à un fichier GeoJSON.</p>
+<p>Les données sont accessibles à l’adresse suivante : </p>
+<p><a href="https://dd.meteo.gc.ca/model_gem_regional/stat-post-processing">https://dd.meteo.gc.ca/model_gem_regional/stat-post-processing/{HH}/{hhh}/</a></p>
+<p>où :</p>
 <ul>
-<li><a href="../readme_rdps-datamart_en/">GRIB2 data available on the MSC Datamart</a></li>
-<li><a href="../readme_rdps-statpostproc-datamart_en/">GeoJSON statistically post-processed files on the MSC Datamart</a></li>
-<li><a href="../readme_astro-rdps-datamart-alpha_en/">GRIB2 astronomy products available on the MSC testing data repository DD-Alpha</a></li>
-<li><a href="../../../msc-geomet/readme_en/">Data available via geospatial web services GeoMet-Weather</a></li>
+<li><strong>HH</strong> : Heure UTC du début de la passe du modèle [00, 12]</li>
+<li><strong>hhh</strong> : Heure de prévision [000, 003, 006, ..., 084] </li>
 </ul>
-<p>An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is available.</p>
-<h3 id="licence">Licence</h3>
-<p>The <a href="../../../licence/readme_en/">end-user licence for Environment and Climate Change Canada's data servers</a> specifies the conditions of use of this data.</p>
-<h3 id="msc-open-data-service-usage-policy">MSC Open Data Service Usage Policy</h3>
-<p>The <a href="../../../usage-policy/readme_en/">MSC Open Data Service Usage Policy</a> determines what constitutes an acceptable use of MSC Open Data services and provides users best practices for optimal use.</p>
-<h3 id="metadata">Metadata</h3>
-<p>The <a href="https://open.canada.ca/data/en/dataset/a9f2828c-0d78-5eb6-a4c7-1fc1219f1e3d">metadata of the Regional Deterministic Prediction System are available on the Open Government Portal</a>.</p>
-<h2 id="products">Products</h2>
-<p>List and links to the products available for this dataset :</p>
-<h3 id="forecast-maps">Forecast maps</h3>
+<p>Un historique de 24 heures est conservé dans ce répertoire.</p>
+<h2 id="specifications-techniques">Spécifications techniques</h2>
 <ul>
-<li><a href="https://meteo.gc.ca/model_forecast/index_e.html">4-panel charts</a></li>
-<li><a href="https://meteo.gc.ca/model_forecast/severe_weather_e.html">Severe weather prediction products</a></li>
-<li><a href="https://collaboration.cmc.ec.gc.ca/cmc/CMOI/product_guide/submenus/rdps_e.html">Product guide documentation</a></li>
+<li>Les prévisions UMOS sont offertes aux stations d’observation situées en Amérique du Nord à l’intérieur de délimitations géographiques suivantes : 141⁰W, 40⁰N, 42⁰W, 88⁰N</li>
+<li>Le datum et la projection géographique sont les suivantes: WGS84, latlon</li>
+<li>Les données sont bilingues</li>
+<li>Les donnees sont conformes aux normes ISO8601.</li>
 </ul>
-<h3 id="aerological-analysis-maps">Aerological analysis maps</h3>
+<h2 id="nomenclature-des-noms-de-fichiers">Nomenclature des noms de fichiers</h2>
+<p>NOTE: TOUTES LES HEURES SONT EN UTC.</p>
+<p>Les fichiers ont la nomenclature suivante :</p>
+<p><code>{YYYYMMDD}T{HH}Z_MSC_RDPS-{PRODUCT}-{METHOD}_{Var}_{LVLTYPE}-{LVL}_PT{hhh}H.json</code></p>
+<p>où :</p>
 <ul>
-<li><a href="https://meteo.gc.ca/data/analysis/sah_100.gif">250hPa: Geopotential height, wind speed</a></li>
-<li><a href="https://meteo.gc.ca/data/analysis/sai_100.gif">500 hPa: Geopotential height, thicknesses 1000-500hPa</a></li>
-<li><a href="https://meteo.gc.ca/data/analysis/saj_100.gif">700 hPa: Geopotential height, temperature, dew point deviation</a></li>
-<li><a href="https://meteo.gc.ca/data/analysis/saa_100.gif">850 hPa: Geopotential height, temperature </a></li>
-<li><a href="https://collaboration.cmc.ec.gc.ca/cmc/CMOI/product_guide/submenus/analyses_e.html">Product guide documentation</a></li>
+<li><strong>YYYYMMDD</strong> : Année, mois et jour du début de la prévision</li>
+<li><strong>T</strong> : Délimiteur temporel selon les normes ISO8601</li>
+<li><strong>HH</strong> : Heure UTC de la passe [00, 12]</li>
+<li><strong>Z</strong> : Fuseau horaire (heure UTC)</li>
+<li><strong>MSC</strong> : Chaîne de caractères constante pour Meteorological Service of Canada, la source des données</li>
+<li><strong>RDPS</strong> : Chaîne de caractères constante indiquant des données post-traitées à partir du Système régional de prévision déterministe</li>
+<li><strong>PRODUCT</strong> : Chaîne de caractères constante indiquant le produit de post-traitement statistique [UMOS]</li>
+<li><strong>METHOD</strong> : Chaîne de caractères constante indiquant la méthode statistique utilisée [MLR pour Multiple Linear Regression]</li>
+<li><strong>Var</strong> : Variables contenues dans le fichier [AirTemp, Dewpoint, WindSpeed, WindDir]</li>
+<li><strong>LVLTYPE</strong> : Type de niveau vertical [Sfc pour la surface, AGL pour le niveau au-dessus du sol (Above Ground Level)]</li>
+<li><strong>LVL</strong> : Valeur du niveau vertical [1.5m, 10m]. Ce paramètre est absent pour la surface</li>
+<li><strong>PT{hhh}H</strong> : Echéance temporelle selon la norme <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601</a>. P, T et H sont des caractères constants désignant Période, Temps et Heure. "hhh" représente l’heure de prévision  [000, 003, 006, ..., 084]</li>
+<li><strong>json</strong> : Chaîne de caractères constante indiquant que le format est GeoJSON</li>
 </ul>
-<h3 id="aviation-products">Aviation products</h3>
+<p>Exemple de nom de fichier: 20220128T00Z_MSC_RDPS-UMOS-MLR_AirTemp_AGL-1.5m_PT072H.json</p>
+<h2 id="liste-des-variables">Liste des variables</h2>
 <ul>
-<li><a href="https://meteo.gc.ca/model_forecast/turb_e.html">Turbulence and icing</a></li>
-<li><a href="../aviation-package_en/">Documentation - 4-panel aviation package</a></li>
-<li><a href="../ceiling_en/">Documentation - 4-panel ceiling forecasts</a></li>
+<li>AirTemp: Température de l'air du thermomètre sec à la surface (K)</li>
+<li>Dewpoint: Température du point de rosée à la surface (K)</li>
+<li>WindSpeed: Vitesse du vent à la surface (km/h)</li>
+<li>WindDir: Direction du vent à la surface (degré vrai)</li>
 </ul>
-<h3 id="astronomy-products">Astronomy products</h3>
-<ul>
-<li><a href="https://meteo.gc.ca/astro/clds_vis_e.html">Cloud forecast</a></li>
-<li><a href="https://meteo.gc.ca/astro/seeing_e.html">Star scintillation prediction</a></li>
-<li><a href="https://meteo.gc.ca/astro/transparence_e.html">Prediction of sky transparency</a></li>
-<li><a href="https://meteo.gc.ca/astro/meteo_e.html">Near-surface forecast</a></li>
-</ul>
-<h2 id="technical-documentation">Technical documentation</h2>
-<ul>
-<li><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_specifications/tech_specifications_RDPS_e.pdf">Current version of the Regional Deterministic Prediction System</a></li>
-<li><a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_notes/technote_rdps_e.pdf">Technical note</a></li>
-</ul>
-<h2 id="changelog">Changelog</h2>
-<p>The chronology of changes to the Regional Deterministic Prediction System (RDPS) is available <a href="../changelog_rdps_en/">in the changelog</a>.</p></div>
+<h2 id="support">Support</h2>
+<p>Pour toute question relative à ces données, merci de nous contacter à l'adresse : <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
+<h2 id="annonces-de-la-liste-de-diffusion-dd_info">Annonces de la liste de diffusion dd_info</h2>
+<p>Les annonces reliées à ce jeu de données sont disponibles via la liste <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/dd_info">dd_info</a>.</p></div>
             </div>
         </div>
 
