@@ -130,7 +130,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#technical-specification-of-the-grid" class="nav-link">Technical specification of the grid</a>
+            <li class="nav-item" data-level="2"><a href="#technical-specification-of-the-grids" class="nav-link">Technical specification of the grids</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -138,15 +138,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#levels" class="nav-link">Levels</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#list-of-variables" class="nav-link">List of variables</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#about-the-no-data-mask" class="nav-link">About the No-data mask</a>
+            <li class="nav-item" data-level="2"><a href="#about-the-polar-stereographic-grid-no-data-mask" class="nav-link">About the polar stereographic grid no-data mask</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -173,20 +169,24 @@
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
 <p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; <a href="../readme_rdpa_en/">RDPA</a> &gt; RDPA on MSC Datamart</p>
 <h1 id="regional-deterministic-precipitation-analysis-rdpa-capa-data-in-grib2-format">Regional Deterministic Precipitation Analysis (RDPA - CaPA) data in GRIB2 format</h1>
-<p>The <a href="../readme_rdpa_en/">Regional Deterministic Precipitation Analysis (RDPA)</a> based on the Canadian Precipitation Analysis (CaPA) system is on a domain that corresponds to that of the operational regional model, i.e. the Regional Deterministic Prediction System (RDPS-LAM3D) except for areas over the Pacific ocean where the western limit of the RDPA domain is slightly shifted eastward with respect to the regional model domain. The resolution of the RDPA analysis is identical to the resolution of the operational regional system RDPS LAM3D. The fields in the RDPA GRIB2 dataset are on a polar-stereographic (PS) grid covering North America and adjacent waters with a 10 km resolution at 60 degrees north. </p>
+<p>This page describes the <a href="../readme_rdpa_en/">Regional Deterministic Precipitation Analysis (RDPA)</a> data based on the Canadian Precipitation Analysis (CaPA) system. </p>
 <h2 id="data-location">Data location</h2>
 <p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
 <p>The data is available using the HTTPS protocol and resides in a directory that is plainly accessible to a web browser. Visiting that directory with an interactive browser will yield a raw listing of links, each link being a downloadable GRIB2 file.</p>
 <p>The data can be accessed at the following URLs :</p>
 <ul>
-<li><a href="https://dd.weatheroffice.gc.ca/analysis/precip/rdpa/grib2/polar_stereographic">https://dd.weather.gc.ca/analysis/precip/rdpa/grib2/polar_stereographic/{hh}</a></li>
+<li>Polar-stereographic grid: <a href="https://dd.weather.gc.ca/analysis/precip/rdpa/grib2/polar_stereographic">https://dd.weather.gc.ca/analysis/precip/rdpa/grib2/polar_stereographic/{hh}</a></li>
+<li>Rotated lat-lon grid: <a href="https://dd.weather.gc.ca/model_rdpa/10km/{hh}">https://dd.weather.gc.ca/model_rdpa/10km/{hh}</a></li>
 </ul>
 <p>where :</p>
 <ul>
 <li><strong>hh</strong> : time interval of 06 or 24 hours in which precipitation accumulations are analyzed</li>
 </ul>
-<p>A 30-day history is kept in this directory.</p>
-<h2 id="technical-specification-of-the-grid">Technical specification of the grid</h2>
+<p>A 30-day history is kept in these directories.</p>
+<h2 id="technical-specification-of-the-grids">Technical specification of the grids</h2>
+<ul>
+<li><strong>Polar-stereographic grid</strong></li>
+</ul>
 <p><img alt="" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_rdpa/grille_rdpa.png" /></p>
 <p>Values given to the parameters of the stereographic polar grid:</p>
 <table>
@@ -223,8 +223,41 @@
 </tr>
 </tbody>
 </table>
+<ul>
+<li><strong>Rotated lat-lon grid</strong></li>
+</ul>
+<p><img alt="Rlatlon RDPA grid" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_rdpa/grille_rdpa_rlatlon.png" /></p>
+<p>The following table lists the values of various parameters of the rotated lat-lon grid:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ni</td>
+<td>1102</td>
+</tr>
+<tr>
+<td>nj</td>
+<td>1076</td>
+</tr>
+<tr>
+<td>resolution at 60° N</td>
+<td>10 km</td>
+</tr>
+<tr>
+<td>coordinate of the first grid point</td>
+<td>-31.76° N ; 92.40° W</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong> : The <a href="https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/update_2.0.8.html">most recent versions of wgrib2</a> and <a href="https://gdal.org/">GDAL</a> support these rotated grids.</p>
 <h2 id="file-name-nomenclature">File name nomenclature</h2>
 <p>NOTE: ALL HOURS ARE IN UTC.</p>
+<h3 id="polar-stereographic-grid">Polar-stereographic grid</h3>
 <p>The files have one of the following nomenclature :</p>
 <ul>
 <li>CMC_RDPA_APCP-006-0100cutoff_SFC_0_ps10km_AAAAMMJJHH_000.grib2</li>
@@ -252,13 +285,37 @@
 <p>Example of file name :</p>
 <p>CMC_RDPA_APCP-006-0100cutoff_SFC_0_ps10km_2015011212_000.grib2</p>
 <p>This file originates from the Canadian Meteorological Center (CMC) and contains data of the regional deterministic precipitation analysis (RDPA).
-It contains the preliminary analysis of the accumulated precipitation represented here by APCP over a 6 (006) hour time interval starting at 2015011206 and ending at 2015011212. It is considered preliminary because the analysis has been produced using observations collected in a short 0100 hour period i.e. before all observations have been collected.</p>
-<p>The data is on a polar-stereographic grid at 10km resolution (ps10km).
-The file name contains the valid time of the analysis which in this case is 2015011212_000.</p>
-<p>The data encoded in GRIB2 format (.grib2).
-Note that a second variable is also included in this file and it is the confidence index for the analysis.</p>
-<h2 id="levels">Levels</h2>
-<p>RDPA variables are only available for the surface level.</p>
+It contains the preliminary analysis of the accumulated precipitation represented here by APCP over a 6 (006) hour time interval starting at 2015011206 and ending at 2015011212. It is considered preliminary because the analysis has been produced using observations collected in a short 0100 hour period i.e. before all observations have been collected. The data is on a polar-stereographic grid at 10km resolution (ps10km). The file name contains the valid time of the analysis which in this case is 2015011212_000.</p>
+<h3 id="rotated-lat-lon-grid">Rotated lat-lon grid</h3>
+<p>Files have one of the following nomenclatures:</p>
+<ul>
+<li>{YYYYMMDD}T{HH}Z_MSC_RDPA_{VAR}_Sfc_RLatLon0.09_PT0H.grib2</li>
+<li>{YYYYMMDD}T{HH}Z_MSC_RDPA-Prelim_{VAR}_Sfc_RLatLon0.09_PT0H.grib2</li>
+</ul>
+<p>where:</p>
+<ul>
+<li><strong>YYYYMMDD</strong>: Year, month and day of the beginning of the forecast</li>
+<li><strong>T</strong> : Time delimiter according to ISO8601 norms</li>
+<li><strong>HH</strong>: UTC run time [00, 12]</li>
+<li><strong>Z</strong> : Time zone (UTC hour)</li>
+<li><strong>MSC</strong> : Constant string indicating the Meteorological Service of Canada, source of data</li>
+<li><strong>RDPA</strong> : Constant string indicating that data is from the Regional Deterministic Precipitation Analysis. Observation cut-off time is about 007 hours after the time YYYYMMDDHH indicating that a maximum of observations has likely been collected</li>
+<li><strong>RDPA-Prelim</strong>: Constant string indicating that data is from the Regional Deterministic Precipitation Analysis. Observation cut-off time is one hour after the time YYYYMMDDHH indicating that possibly not all observations have been collected</li>
+<li><strong>Sfc</strong> : Constant string indicating that the surface is the vertical level </li>
+<li><strong>RLatLon0.09</strong> : Constant string indicating a rotated lat-lon grid with 0.09 deg resolution (about 10km)</li>
+<li><strong>PT0H</strong> : Based on ISO8601 norms. P, T and H are constant character designating Period, Time and Hour. Here PT0H indicates an analysis.</li>
+<li><strong>grib2</strong> : constant string indicating the GRIB2 format is used</li>
+</ul>
+<p>Examples of files names :</p>
+<ul>
+<li>20220301T00Z_MSC_RDPA-Prelim_APCP-Accum6h_Sfc_RLatLon0.09_PT0H.grib2</li>
+</ul>
+<p>The file originates from the Meteorological Service of Canada (MSC) and contains a Regional Deterministic Precipitation Analysis (RDPA). It contains a preliminary analysis of precipitation accumulation represented by the APCP variable over a 6 hour interval. The data are on a lat-lon rotated grid at a 10 km resolution (RLatLon0.09). The analysis was produced on March 01, 2022 at 00Z (20220301T00Z). The 006-hour interval in which the precipitation is analyzed is 2022030100 to 2022030106. </p>
+<ul>
+<li>20220302T12Z_MSC_RDPA_APCP-Accum24h_Sfc_RLatLon0.09_PT0H.grib2</li>
+</ul>
+<p>The file originates from the Meteorological Service of Canada (MSC) and contains a Regional Deterministic Precipitation Analysis (RDPA). It contains a final analysis of precipitation accumulation represented by the APCP variable over a 24-hour interval. The data are on a lat-lon grid rotated to a 10 km resolution (RLatLon0.09). The analysis was produced on 02 March 2022 at 12Z (2022030212). The 24-hour interval in which precipitation is analyzed is 2022030212 to 2022030312.</p>
+<p><strong>NOTE</strong>: A second variable is also included in this file and it is the confidence index for the analysis.</p>
 <h2 id="list-of-variables">List of variables</h2>
 <p>This table provides the variable name, level, abbreviation, units and a link to additional grib2 encoding information for each parameter encoded in GRIB2 format.</p>
 <table>
@@ -277,7 +334,7 @@ Note that a second variable is also included in this file and it is the confiden
 <td>0</td>
 <td>Analysis of Accumulated Precipitation on a 06hr or 24hr interval</td>
 <td>Surface</td>
-<td>APCP-0[06,24]_SFC_0</td>
+<td>APCP</td>
 <td>kg m-2</td>
 <td><a href="https://weather.gc.ca/grib/display_e.html?type=rdpa&amp;res=ps10km&amp;hour=A000&amp;desc=analysis&amp;nombre=0">Sections 0 to 6</a></td>
 </tr>
@@ -285,13 +342,13 @@ Note that a second variable is also included in this file and it is the confiden
 <td>1</td>
 <td>Confidence Index for Analysis</td>
 <td>Surface</td>
-<td>CFIA_SFC_0</td>
+<td>CFIA</td>
 <td>varies from 0 to 1, no units</td>
 <td><a href="https://weather.gc.ca/grib/display_e.html?type=rdpa&amp;res=ps10km&amp;hour=A000&amp;desc=analysis&amp;nombre=1">Sections 0 to 6</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="about-the-no-data-mask">About the No-data mask</h2>
+<h2 id="about-the-polar-stereographic-grid-no-data-mask">About the polar stereographic grid no-data mask</h2>
 <p>Since January, 13th 2016, a mask called "No-data" has been added to our GRIB2 encoding process in order to better represent the areas where data are unavailable. This mask only concerns a few grid points with no data, always the same ones, located at the edge of the domain. Note that this mask has no negative effect on the product quality.</p>
 <h2 id="online-archives">Online archives</h2>
 <ul>
