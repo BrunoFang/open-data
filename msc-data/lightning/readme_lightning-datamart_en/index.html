@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Readme hurricanes geomet fr - MSC Open Data / Données ouvertes du SMC</title>
+        <title>Readme lightning datamart en - MSC Open Data / Données ouvertes du SMC</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -124,13 +124,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#donnees-de-prevision-des-ouragans-disponibles-sur-geomet-du-smc" class="nav-link">Données de prévision des ouragans disponibles sur GeoMet du SMC</a>
+            <li class="nav-item" data-level="1"><a href="#lightning-density-data" class="nav-link">Lightning density data</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#acces-aux-services-web-geospatiaux" class="nav-link">Accès aux services web géospatiaux</a>
+            <li class="nav-item" data-level="2"><a href="#data-location" class="nav-link">Data location</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#utilisation" class="nav-link">Utilisation</a>
+            <li class="nav-item" data-level="2"><a href="#filename-nomenclature" class="nav-link">Filename nomenclature</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -138,7 +138,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#liste-dinformation" class="nav-link">Liste d'information</a>
+            <li class="nav-item" data-level="2"><a href="#announcements-from-the-dd_info-mailing-list" class="nav-link">Announcements from the dd_info mailing list</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -149,74 +149,40 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p><a href="../readme_hurricanes_geomet_en/">In English</a></p>
+<p><a href="../readme_lightning-datamart_fr/">En français</a></p>
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
-<p><a href="../../../readme_fr/">TdM</a> &gt; <a href="../../readme_fr/">Données du SMC</a> &gt; <a href="../readme_hurricanes_fr/">Ouragans</a> &gt; Données de prévision des ouragans sur GeoMet du SMC</p>
-<h1 id="donnees-de-prevision-des-ouragans-disponibles-sur-geomet-du-smc">Données de prévision des ouragans disponibles sur GeoMet du SMC</h1>
-<p>GeoMet du SMC donne accès à plusieurs couches de prévision des ouragans. Les usagers peuvent développer des applications mobiles, créer des cartes interactives en-ligne, ainsi que visualiser et animer les données du SMC dans des logiciels de bureau.</p>
-<h2 id="acces-aux-services-web-geospatiaux">Accès aux services web géospatiaux</h2>
-<p>Les couches de prévision des ouragans sont <a href="../../../msc-geomet/readme_fr/">disponibles sur GeoMet-Météo par le biais du standard Web Map Service (WMS)</a>.</p>
-<p>Exemple de carte interactive présentant les couches Web Map Service (WMS) de zone de réaction aux ouragans et ouragans actifs, en plus de couches d'avertissements météo et de précipitation, provenant de GeoMet du SMC :</p>
-<div id="map" style="height: 400px;"></div>
-<div id="controller" role="group" aria-label="Animation controls" style="background: #ececec; padding: 0.5rem;">
-  <button id="play" class="btn btn-primary btn-sm" type="button"><i class="fa fa-play" style="padding: 0rem 1rem"></i></button>
-  <button id="pause" class="btn btn-primary btn-sm" type="button"><i class="fa fa-pause" style="padding: 0rem 1rem"></i></button>
-  <button id="exportmap" class="btn btn-primary btn-sm" type="button"><i class="fa fa-download" style="padding: 0rem 1rem"></i></button>
-  <span id="info" style="padding-left: 0.5rem;"></span>
-</div>
-
-<h2 id="utilisation">Utilisation</h2>
-<p>La page de <a href="../../../usage/readme_fr/">l'aperçu de l'utilisation</a> présente l'information de base sur l'utilisation de ces services avec des logiciels de bureau, des applications mobiles, les cartes interactives en ligne ainsi que l'accès direct. Veuillez vous référer aux <a href="../../../msc-geomet/readme_fr/">tutoriels et à la documentation technique sur les services web géospatiaux GeoMet du SMC</a> pour de l'information détaillée. Voir également la <a href="../readme_hurricanes_fr/">page d'accueil des données de prévision des ouragans</a> qui pointe vers de l'information additionnelle sur les données des ouragans et produits reliés.</p>
-<h3 id="couches-disponibles">Couches disponibles</h3>
-<p>Il y a cinq couches principales de prévision des ouragans, dont quatre d'entre elles sont reliées aux ouragans actifs.</p>
+<p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; <a href="../readme_lightning_en/">Lightning</a> &gt; Lightning data on MSC Datamart</p>
+<h1 id="lightning-density-data">Lightning density data</h1>
+<p>This page describes the <a href="../readme_lightning_en/">lightning</a> data available in GeoTIFF format via the MSC Datamart.</p>
+<h2 id="data-location">Data location</h2>
+<p>MSC Datamart data can be <a href="../../../msc-datamart/amqp_en/">automatically retrieved with the Advanced Message Queuing Protocol (AMQP)</a> as soon as they become available. An <a href="../../../usage/readme_en/">overview and examples to access and use the Meteorological Service of Canada's open data</a> is also available.</p>
+<p>The data is available via the HTTPS protocol. It is possible to access it with a standard browser. In this case, we obtain a list of links giving access to a GeoTIFF file.</p>
+<p>The MetNotes data are available at the following address:</p>
+<p><a href="https://hpfx.collab.science.gc.ca/">https://hpfx.collab.science.gc.ca/{YYYMMDD}/WXO-DD/lightning</a></p>
+<p>where:</p>
 <ul>
-<li>Zone de réaction aux ouragans, ID: <code>HURRICANE_RESPONSE_ZONE</code></li>
-<li>Couches des ouragans actifs:<ul>
-<li>Points de prévision, ID: <code>HURRICANE_CENTRE</code></li>
-<li>Segments inter-points, ID: <code>HURRICANE_LINE</code></li>
-<li>Erreur de prévision de trajectoire, ID: <code>HURRICANE_ERR</code></li>
-<li>Rayons de prévisions de vent (quadrants), ID: <code>HURRICANE_RAD</code></li>
+<li><strong>YYYYMMDD</strong>: Year, month and day</li>
 </ul>
-</li>
-</ul>
-<h3 id="conseils-dutilisation">Conseils d'utilisation</h3>
-<p>Styles WMS :</p>
+<p>A history of several weeks is kept in this directory.</p>
+<h2 id="filename-nomenclature">Filename nomenclature</h2>
+<p>NOTE: ALL HOURS ARE IN UTC.</p>
+<p>The files have the following nomenclature:</p>
+<p><code>{YYYYMMDD}T{HHmm}Z_MSC_Lightning_2.5km.tif</code></p>
+<p>where:</p>
 <ul>
-<li>En plus du style WMS par défaut, plusieurs styles WMS alternatifs avec des échelles de couleurs différentes sont disponibles. La liste des styles WMS est fournie dans la réponse d'une requête WMS GetCapabilities (<a href="https://geo.weather.gc.ca/geomet?service=WMS&amp;version=1.3.0&amp;lang=fr&amp;request=GetCapabilities&amp;layer=HURRICANE_RESPONSE_ZONE">exemple d'une requête WMS GetCapabilites</a>)</li>
-<li>Par ailleurs, les utilisateurs peuvent visualiser les couches avec leurs propres styles en utilisant le standard Styled Layer Descriptor (SLD). Veuillez vous référer à la <a href="../../../msc-geomet/web-services_fr#specification-des-styles">documentation technique sur le SLD</a></li>
+<li><strong>YYYYMMDD</strong> : Year, month and day of data emission</li>
+<li><strong>T</strong> : Time delimiter according to ISO8601 norms</li>
+<li><strong>HHmm</strong> : Hour and minute when data are produced</li>
+<li><strong>Z</strong> : Time zone (UTC hour)</li>
+<li><strong>MSC</strong> : Constant string indicating that the data is from the Meteorologcal Service of Canada (MSC)</li>
+<li><strong>Lightning</strong> : Constant string indicating that data is from lightning density production system</li>
+<li><strong>2.5km</strong> : Constant string indicating the horizontal data resolution</li>
+<li><strong>tif</strong> : File extention indicating the GeoTIFF format</li>
 </ul>
-<p>Légendes :</p>
-<ul>
-<li>Les légendes sont disponibles pour tous les styles WMS. Les détails sont disponibles dans la <a href="../../../msc-geomet/web-services_fr#wms-getlegendgraphic">documentation technique des légendes WMS</a></li>
-<li>Exemple d'une requête pour récupérer une légende : <code>https://geo.weather.gc.ca/geomet?version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=HURRICANE_RESPONSE_ZONE&amp;format=image/png&amp;STYLE=HURRICANE_LINE_BLACK_DASHED</code></li>
-</ul>
-<p><img alt="La légende WMS HURRICANE_LINE_BLACK_DASHED" src="https://geo.weather.gc.ca/geomet?version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=HURRICANE_RESPONSE_ZONE&amp;format=image/png&amp;STYLE=HURRICANE_LINE_BLACK_DASHED" /></p>
 <h2 id="support">Support</h2>
-<p>Les services GeoMet du SMC sont opérationnels 24/7. Le support aux usagers est offert sur la base du meilleur effort durant les heures de travail normales. Les usagers désirant du support sont invités à <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">communiquer avec nous</a>.</p>
-<h2 id="liste-dinformation">Liste d'information</h2>
-<p>Nous encourageons les usagers à s'abonner à la liste d'information <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/geomet-info">GeoMet-Info</a> afin d'être informés des améliorations et changements aux services GeoMet du SMC.</p>
-<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" integrity="sha256-rQq4Fxpq3LlPQ8yP11i6Z2lAo82b6ACDgd35CKyNEBw=" crossorigin="anonymous" /></p>
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js" integrity="sha256-77IKwU93jwIX7zmgEBfYGHcmeO0Fx2MoWB/ooh9QkBA=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
-<script>
-    function isIE() {
-      return window.navigator.userAgent.match(/(MSIE|Trident)/);
-    }
-    var head = document.getElementsByTagName('head')[0];
-    var js = document.createElement("script");
-    js.type = "text/javascript";
-    if (isIE())
-    {
-        js.src = "../../../js/hurricane_ie.js";
-        document.getElementById("controller").setAttribute("hidden", true);
-    }
-    else
-    {
-        js.src = "../../../js/hurricane.js";
-    }
-    head.appendChild(js);
-</script></div>
+<p>If you have any questions about this data, please contact us at: <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
+<h2 id="announcements-from-the-dd_info-mailing-list">Announcements from the dd_info mailing list</h2>
+<p>Announcements related to this dataset are available in the <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/dd_info">dd_info list</a>.</p></div>
             </div>
         </div>
 
