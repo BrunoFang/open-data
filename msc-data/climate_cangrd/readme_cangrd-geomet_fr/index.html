@@ -155,7 +155,18 @@
 <h1 id="donnees-du-cangrd-disponibles-sur-geomet-du-smc">Données du CanGRD disponibles sur GeoMet du SMC</h1>
 <p>GeoMet du SMC donne accès à plusieurs couches et produits des Anomalies de température et précipitation interpolées pour le Canada (CanGRD). Les usagers peuvent développer des applications mobiles, créer des cartes interactives en-ligne, ainsi que visualiser et animer les données climatiques du SMC dans des logiciels de bureau.</p>
 <h2 id="acces-aux-services-web-geospatiaux">Accès aux services web géospatiaux</h2>
-<p>Les couches du CanGRD sont <a href="../../../msc-geomet/readme_fr/">disponibles sur GeoMet-Météo par le biais des standards WMS (Web Map Service) et WCS (Web Coverage Service)</a>.</p>
+<p>Les données du CanGRD sont disponibles</p>
+<ul>
+<li><a href="../../../msc-geomet/readme_fr/">sur GeoMet-Météo par le biais des standards WMS (Web Map Service) et WCS (Web Coverage Service)</a>.</li>
+<li><a href="https://api.meteo.gc.ca/">via les services web géospatiaux GeoMet-OGC-API</a>:<ul>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cangrd:historical:annual:trend">CanGRD - Tendance annuelle historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cangrd:historical:seasonal:trend">CanGRD - Tendance saisonnière historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cangrd:historical:annual:anomaly">CanGRD - Anomalie annuelle historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cangrd:historical:seasonal:anomaly">CanGRD - Anomalie saisonnière historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cangrd:historical:monthly:anomaly">CanGRD - Anomalie mensuelle historique</a></li>
+</ul>
+</li>
+</ul>
 <p>Exemple de carte interactive présentant la couche <a href="https://geo.weather.gc.ca/geomet-climate?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities&amp;lang=fr&amp;layer=CANGRD.ANO.TX_ANNUAL">CANGRD.ANO.TX_ANNUAL</a> du CanGRD provenant de GeoMet du SMC :</p>
 <div id="map" style="height: 400px;"></div>
 <div id="controller" role="group" aria-label="Animation controls" style="background: #ececec; padding: 0.5rem;">

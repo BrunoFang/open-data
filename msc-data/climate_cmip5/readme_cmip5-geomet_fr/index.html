@@ -155,7 +155,27 @@
 <h1 id="donnees-du-cmip5-disponibles-sur-geomet-du-smc">Données du CMIP5 disponibles sur GeoMet du SMC</h1>
 <p>GeoMet du SMC donne accès à plusieurs couches et produits de scénarios climatiques, basés sur un ensemble de projections de modèles climatiques globaux de la phase 5 du projet d'intercomparaison de modèles couplées (CMIP5). Les usagers peuvent développer des applications mobiles, créer des cartes interactives en-ligne, ainsi que visualiser et animer les données climatiques du SMC dans des logiciels de bureau.</p>
 <h2 id="acces-aux-services-web-geospatiaux">Accès aux services web géospatiaux</h2>
-<p>Les couches du CMIP5 sont <a href="../../../msc-geomet/readme_fr/">disponibles sur GeoMet-Météo par le biais des standards WMS (Web Map Service) et WCS (Web Coverage Service)</a>.</p>
+<p>Les données du CMIP5 sont disponibles </p>
+<ul>
+<li><a href="../../../msc-geomet/readme_fr/">sur GeoMet-Météo par le biais des standards WMS (Web Map Service) et WCS (Web Coverage Service)</a>.</li>
+<li><a href="https://api.meteo.gc.ca/">via les services web géospatiaux GeoMet-OGC-API</a> :<ul>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:projected:annual:absolute">CMIP5 - Annuelle projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:projected:seasonal:absolute">CMIP5 - Saisonnière projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:projected:monthly:absolute">CMIP5 - Mensuelle projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:projected:annual:anomaly">CMIP5 - Anomalie annuelle projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:projected:seasonal:anomaly">CMIP5 - Anomalie saisonnière projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:projected:monthly:anomaly">CMIP5 - Anomalie mensuelle projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:projected:annual:P20Y-Avg">CMIP5 - Anomalie annuelle projetée pour une moyenne de 20 ans</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:projected:seasonal:P20Y-Avg">CMIP5 - Anomalie saisonnière projetée pour une moyenne de 20 ans</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:historical:annual:absolute">CMIP5 - Annuelle historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:historical:seasonal:absolute">CMIP5 - Saisonnière historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:historical:monthly:absolute">CMIP5 - Mensuelle historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:historical:annual:anomaly">CMIP5 - Anomalie annuelle historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:historical:seasonal:anomaly">CMIP5 - Anomalie saisonnière historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:cmip5:historical:monthly:anomaly">CMIP5 - Anomalie mensuelle historique</a></li>
+</ul>
+</li>
+</ul>
 <p>Exemple de carte interactive présentant la couche <a href="https://geo.weather.gc.ca/geomet-climate?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities&amp;lang=fr&amp;layer=CMIP5.TT.HISTO.SUMMER.ABS_PCTL50">CMIP5.TT.HISTO.SUMMER.ABS_PCTL50</a> du CMIP5 provenant de GeoMet du SMC :</p>
 <div id="map" style="height: 400px;"></div>
 <div id="controller" role="group" aria-label="Animation controls" style="background: #ececec; padding: 0.5rem;">

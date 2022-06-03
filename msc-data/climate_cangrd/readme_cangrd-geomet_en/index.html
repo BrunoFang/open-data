@@ -155,7 +155,18 @@
 <h1 id="cangrd-data-available-on-msc-geomet">CanGRD data available on MSC GeoMet</h1>
 <p>MSC GeoMet-Climate provides access to data and products of the Canadian Gridded Temperature and Precipitation Anomalies (CanGRD). Users can build mobile apps, create interactive web maps, and display and animate climate data layers in desktop software.</p>
 <h2 id="access-to-the-geospatial-web-services">Access to the geospatial web services</h2>
-<p>The CanGRD data is <a href="../../../msc-geomet/readme_en/">available on GeoMet-Climate via the Web Map Service (WMS) and Web Coverage Service (WCS) standards</a>.</p>
+<p>The CanGRD data is available</p>
+<ul>
+<li><a href="../../../msc-geomet/readme_en/">on GeoMet-Climate via the Web Map Service (WMS) and Web Coverage Service (WCS) standards</a>.</li>
+<li><a href="https://api.weather.gc.ca/">via the GeoMet-OGC-API geospatial web services</a>:<ul>
+<li><a href="https://api.weather.gc.ca/collections/climate:cangrd:historical:annual:trend">CanGRD - Historical annual trend</a></li>
+<li><a href="https://api.weather.gc.ca/collections/climate:cangrd:historical:seasonal:trend">CanGRD - Historical seasonal trend</a></li>
+<li><a href="https://api.weather.gc.ca/collections/climate:cangrd:historical:annual:anomaly">CanGRD - Historical annual anomaly</a></li>
+<li><a href="https://api.weather.gc.ca/collections/climate:cangrd:historical:seasonal:anomaly">CanGRD - Historical seasonal anomaly</a></li>
+<li><a href="https://api.weather.gc.ca/collections/climate:cangrd:historical:monthly:anomaly">CanGRD - Historical monthly anomaly</a></li>
+</ul>
+</li>
+</ul>
 <p>Example of a web map configured to display the <a href="https://geo.weather.gc.ca/geomet-climate?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities&amp;layer=CANGRD.ANO.TX_ANNUAL">CANGRD.ANO.TX_ANNUAL</a> layer served by MSC GeoMet:</p>
 <div id="map" style="height: 400px;"></div>
 <div id="controller" role="group" aria-label="Animation controls" style="background: #ececec; padding: 0.5rem;">

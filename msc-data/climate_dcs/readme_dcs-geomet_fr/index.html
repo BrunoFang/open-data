@@ -155,7 +155,25 @@
 <h1 id="donnees-des-resultats-statistiquement-reduits-a-lechelle-disponibles-sur-geomet-du-smc">Données des résultats statistiquement réduits à l'échelle disponibles sur GeoMet du SMC</h1>
 <p>GeoMet du SMC donne accès à plusieurs données et produits des résultats statistiquement réduits à l'échelle pour des modèles climatiques du CMIP5. Les usagers peuvent développer des applications mobiles, créer des cartes interactives en-ligne, ainsi que visualiser et animer les données climatiques du SMC dans des logiciels de bureau.</p>
 <h2 id="acces-aux-services-web-geospatiaux">Accès aux services web géospatiaux</h2>
-<p>Les couches des résultats statistiquement réduits à l'échelle sont <a href="../../../msc-geomet/readme_fr/">disponibles sur GeoMet-Météo par le biais des standards WMS (Web Map Service) et WCS (Web Coverage Service)</a>.</p>
+<p>Les données des résultats statistiquement réduits à l'échelle sont disponibles </p>
+<ul>
+<li><a href="../../../msc-geomet/readme_fr/">sur GeoMet-Météo par le biais des standards WMS (Web Map Service) et WCS (Web Coverage Service)</a>.</li>
+<li><a href="https://api.meteo.gc.ca/">via les services web géospatiaux GeoMet-OGC-API</a>:<ul>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:projected:annual:absolute">DCS - Annuelle projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:projected:seasonal:absolute">DCS - Saisonnière projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:projected:monthly:absolute">DCS - Mensuelle projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:projected:annual:anomaly">DCS - Anomalie annuelle projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:projected:seasonal:anomaly">DCS - Anomalie saisonnière projetée</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:projected:annual:P20Y-Avg">DCS - Anomalie annuelle projetée pour une moyenne de 20 ans</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:projected:seasonal:P20Y-Avg">DCS - Anomalie saisonnière projetée pour une moyenne de 20 ans</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:historical:annual:absolute">DCS - Annuelle historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:historical:seasonal:absolute">DCS - Saisonnière historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:historical:monthly:absolute">DCS - Mensuelle historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:historical:annual:anomaly">DCS - Anomalie annuelle historique</a></li>
+<li><a href="https://api.meteo.gc.ca/collections/climate:dcs:historical:seasonal:anomaly">DCS - Anomalie saisonnière historique</a></li>
+</ul>
+</li>
+</ul>
 <p>Exemple de carte interactive présentant la couche <a href="https://geo.weather.gc.ca/geomet-climate?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities&amp;lang=fr&amp;layer=DCS.PR.RCP26.YEAR.2021-2040_PCTL50">DCS.PR.RCP26.YEAR.2021-2040_PCTL50</a> des résultats statistiquement réduits à l'échelle provenant de GeoMet du SMC :</p>
 <div id="map" style="height: 400px;"></div>
 <div id="controller" role="group" aria-label="Animation controls" style="background: #ececec; padding: 0.5rem;">
