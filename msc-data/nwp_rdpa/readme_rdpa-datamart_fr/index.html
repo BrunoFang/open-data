@@ -177,12 +177,13 @@
 <p>Les données sont accessibles aux adresses suivantes :</p>
 <ul>
 <li>Données sur grille polaire stéréographique: <a href="https://dd.meteo.gc.ca/analysis/precip/rdpa/grib2/polar_stereographic">https://dd.meteo.gc.ca/analysis/precip/rdpa/grib2/polar_stereographic/{hh}</a></li>
-<li>Données sur grille lat-lon tournée: <a href="https://hpfx.collab.science.gc.ca/">https://hpfx.collab.science.gc.ca/{YYYMMDD}/WXO-DD/model_rdpa/10km/{hh}/</a></li>
+<li>Données sur grille lat-lon tournée: <a href="https://hpfx.collab.science.gc.ca/">https://hpfx.collab.science.gc.ca/{YYYMMDD}/WXO-DD/model_rdpa/10km/{HH}/</a></li>
 </ul>
 <p>où :</p>
 <ul>
 <li><strong>YYYYMMDD</strong> : Année, mois et jour</li>
 <li><strong>hh</strong> : Heure finale d’accumulation de précipitation [06, 24]</li>
+<li><strong>HH</strong> : Heure UTC de la passe [00, 06, 12, 18]</li>
 </ul>
 <p>Un historique de 30 jours est conservé sur le Datamart du SMC et de plusieurs semaines sur HPFX, le serveur alternatif du Datamart du SMC.</p>
 <h2 id="specification-technique-des-grilles">Spécification technique des grilles</h2>
@@ -297,11 +298,12 @@
 <ul>
 <li><strong>YYYYMMDD</strong>: Année, mois et jour du début de la prévision </li>
 <li><strong>T</strong> : Délimiteur temporel selon les normes ISO8601</li>
-<li><strong>HH</strong>: Heure UTC de la passe [00, 12]</li>
+<li><strong>HH</strong>: Heure UTC de la passe [00, 06, 12, 18]</li>
 <li><strong>Z</strong> : Fuseau horaire (heure UTC)</li>
 <li><strong>MSC</strong> : Chaîne de caractères constante pour Meteorological Service of Canada, la source des données</li>
 <li><strong>RDPA</strong> : Chaîne de caractères constante indiquant le modèle source Analyse régionale de prévision déterministe. Temps de coupure de 7 heures pour les observations après l'heure YYYYMMDDHH, indiquant qu'un maximum d'observations a probablement été recueilli</li>
 <li><strong>RDPA-Prelim</strong>: Chaîne de caractères constante indiquant le modèle source Analyse régionale de prévision déterministe. Temps de coupure des observations à l'intérieur d'une heure après l'heure YYYYMMDDHH, indiquant que toutes les observations n'ont possiblement pas été recueillies</li>
+<li><strong>VAR</strong> : Chaîne de caractères constante donnant le nom de la variable contenue dans le fichier. Ici, il s’agit de l’analyse de précipitation accumulée sur une certaine période [APCP-Accum6h, APCP-Accum24h]</li>
 <li><strong>Sfc</strong> : Indique que le type de niveau est la surface</li>
 <li><strong>RLatLon0.09</strong>: Chaîne de caractères constante indiquant une grille lat-lon tournée à 0.09deg de résolution (environ 10km)</li>
 <li><strong>PT0H</strong>: Basé sur les normes ISO8601. P, T et H sont des caractères constants indiquant respectivement la période, le temps et l'heure. Ici, PT0H indique qu'il s'agit d'une analyse</li>

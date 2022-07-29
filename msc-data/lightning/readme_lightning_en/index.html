@@ -145,7 +145,13 @@
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
 <p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; Lightning</p>
 <h1 id="lightning-density-data">Lightning density data</h1>
-<p>This page describes the lightning density data... A compléter ...</p>
+<p>The <a href="https://www.canada.ca/en/environment-climate-change/services/lightning/canadian-detection-network.html">Canadian Lightning Detection Network</a> provides lightning monitoring across most of Canada. The data distributed here represents a spatio-temporal aggregation of the observations of this network available with an accuracy of a few hundred meters. More precisely, every 10 minutes, the reported observations are processed in the following way:</p>
+<ul>
+<li>The location of observed lightning (cloud-to-ground and intra-cloud) in the last 10 minutes is extracted.</li>
+<li>Using a regular horizontal grid of about 2.5km by 2.5km, the number of observed lightning flashes within each grid cell is calculated.</li>
+<li>These grid data are normalized by the exact area of each cell (in km2) and by the accumulation period (10min) to obtain an observed flash density expressed in km-2 and min-1</li>
+<li>A mask is applied to remove data located more than 250km from Canadian land or sea borders.</li>
+</ul>
 <h2 id="access">Access</h2>
 <h3 id="how-to-access-the-data">How to access the data</h3>
 <p>This data is available on the <a href="../../../msc-datamart/readme_en/">MSC Datamart</a> data server services as well as <a href="../../../msc-geomet/readme_en/">MSC GeoMet</a>:</p>

@@ -145,7 +145,13 @@
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
 <p><a href="../../../readme_fr/">TdM</a> &gt; <a href="../../readme_fr/">Données du SMC</a> &gt; Lightning</p>
 <h1 id="donnees-de-densite-de-foudre">Données de densité de foudre</h1>
-<p>Cette page décrit les données de densité de foudre..... A compléter...</p>
+<p>Le <a href="https://www.canada.ca/fr/environnement-changement-climatique/services/foudre/reseau-canadien-detection.html">Réseau Canadien de Détection de la Foudre</a> assure la surveillance de la foudre presque partout au Canada. Les données distribuées ici représentent une agrégation spatio-temporelle des observations de ce réseau ayant une précision de quelques centaines de mètres. Plus précisément, toutes les 10 minutes, les observations rapportées sont traitées de la façon suivante:</p>
+<ul>
+<li>L'emplacement des éclairs observés (nuage-sol et intra-nuageux) dans les 10 dernières minutes est extrait.</li>
+<li>A l'aide d'une grille horizontale régulière d'environ 2.5km par 2.5km, le nombre d'éclairs observés à l'intérieur de chacune des cellules de cette grille est calculé.</li>
+<li>Ces données sur grille sont normalisées par la surface exacte de chacune des cellules (en km2) et par la période d'accumulation (10min) pour obtenir une densité d'éclairs observés exprimée en km-2 et min-1</li>
+<li>Un masque est appliqué afin de retirer les données situées à plus de 250km des frontières terrestres ou maritimes canadiennes.</li>
+</ul>
 <h2 id="acces">Accès</h2>
 <h3 id="comment-acceder-aux-donnees">Comment accéder aux données</h3>
 <p>Ces données sont respectivement disponibles sur les services du serveur de données <a href="../../../msc-datamart/readme_fr/">Datamart du SMC</a> et les services web <a href="../../../msc-geomet/readme_fr/">GeoMet du SMC</a> :</p>

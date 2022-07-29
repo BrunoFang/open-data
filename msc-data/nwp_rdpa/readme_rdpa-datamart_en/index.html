@@ -176,12 +176,13 @@
 <p>The data can be accessed at the following URLs :</p>
 <ul>
 <li>Polar-stereographic grid: <a href="https://dd.weather.gc.ca/analysis/precip/rdpa/grib2/polar_stereographic">https://dd.weather.gc.ca/analysis/precip/rdpa/grib2/polar_stereographic/{hh}</a></li>
-<li>Rotated lat-lon grid: <a href="https://hpfx.collab.science.gc.ca/">https://hpfx.collab.science.gc.ca/{YYYMMDD}/WXO-DD/model_rdpa/10km/{hh}</a></li>
+<li>Rotated lat-lon grid: <a href="https://hpfx.collab.science.gc.ca/">https://hpfx.collab.science.gc.ca/{YYYMMDD}/WXO-DD/model_rdpa/10km/{HH}</a></li>
 </ul>
 <p>where :</p>
 <ul>
 <li><strong>YYYYMMDD</strong>: Year, month and day</li>
 <li><strong>hh</strong> : time interval of 06 or 24 hours in which precipitation accumulations are analyzed</li>
+<li><strong>HH</strong> :  UTC run time [00, 06, 12, 18]</li>
 </ul>
 <p>A 30-day history is kept on the MSC Datamart and a history of several weeks is kept on HPFX, the MSC Datamart alternative server.</p>
 <h2 id="technical-specification-of-the-grids">Technical specification of the grids</h2>
@@ -279,7 +280,7 @@
 <li><strong>0</strong>: Elevation of the above level type where here 0 indicates the surface. For RDPA grib2 data this is the only level available.</li>
 <li><strong>ps10km</strong>: Constant string indicating the projection used is polar-stereographic at 10km resolution.</li>
 <li><strong>YYYYMMDDHH</strong>: Year, month, day and hour of valid date of the analysis.</li>
-<li><strong>HH</strong>: UTC run time [00,06, 12, 18]</li>
+<li><strong>HH</strong>: UTC run time [00, 06, 12, 18]</li>
 <li><strong>000</strong>: Represents the number of hours after the YYYYMMDDHH time at which the analysis is valid.</li>
 <li><strong>grib2</strong>: Constant string indicating the GRIB2 format is used</li>
 </ul>
@@ -297,11 +298,12 @@ It contains the preliminary analysis of the accumulated precipitation represente
 <ul>
 <li><strong>YYYYMMDD</strong>: Year, month and day of the beginning of the forecast</li>
 <li><strong>T</strong> : Time delimiter according to ISO8601 norms</li>
-<li><strong>HH</strong>: UTC run time [00, 12]</li>
+<li><strong>HH</strong>: UTC run time [00, 06, 12, 18]</li>
 <li><strong>Z</strong> : Time zone (UTC hour)</li>
 <li><strong>MSC</strong> : Constant string indicating the Meteorological Service of Canada, source of data</li>
 <li><strong>RDPA</strong> : Constant string indicating that data is from the Regional Deterministic Precipitation Analysis. Observation cut-off time is about 007 hours after the time YYYYMMDDHH indicating that a maximum of observations has likely been collected</li>
 <li><strong>RDPA-Prelim</strong>: Constant string indicating that data is from the Regional Deterministic Precipitation Analysis. Observation cut-off time is one hour after the time YYYYMMDDHH indicating that possibly not all observations have been collected</li>
+<li><strong>VAR</strong> : Constant string indicating the variable included in the file namely in this case, the accumulated precipitation which has been analyzed over a specific period [APCP-Accum6h, APCP-Accum24h]</li>
 <li><strong>Sfc</strong> : Constant string indicating that the surface is the vertical level </li>
 <li><strong>RLatLon0.09</strong> : Constant string indicating a rotated lat-lon grid with 0.09 deg resolution (about 10km)</li>
 <li><strong>PT0H</strong> : Based on ISO8601 norms. P, T and H are constant character designating Period, Time and Hour. Here PT0H indicates an analysis.</li>
