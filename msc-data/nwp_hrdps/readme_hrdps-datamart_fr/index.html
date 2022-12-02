@@ -171,6 +171,7 @@
 <h1 id="donnees-grib2-du-systeme-a-haute-resolution-de-prevision-deterministe-shrpd">Données GRIB2 du Système à Haute Résolution de Prévision Déterministe (SHRPD)</h1>
 <p>Le <a href="../readme_hrdps_fr/">Système à haute résolution de prévision déterministe ou SHRPD</a> est une série de grilles emboitées pour les prévisions à aire limitée (LAM). Les grilles proviennent du SRPD et ont une résolution horizontale de 2.5 km à l’intérieur du domaine, sur une région principale Pancanadienne et sur une région Nord couvrant l'archipel arctique et le Groenland. Le modèle pilote du SHRPD est le Système régional de prévision déterministe ou SRPD. Le SHRPD est opérationnel pour tous les domaines sauf le domaine Nord qui demeure expérimental. Les champs du jeu de données GRIB2 du SHRPD sont disponibles quatre fois par jour (sauf pour le domaine Nord). Des prévisions de 48 heures sont produites pour le domaine Pancanadien.</p>
 <p>Les utilisateurs qui tireront le plus avantage des données sont ceux qui ont besoin de prévisions plus détaillées sur la température et sur les vents à la surface pour la journée même. Les prévisions à 2.5 km sont grandement utiles lors des changements de saisons et en hiver lorsque des changements rapides de température et de vents provoquent des changements de phase des précipitations (neige à pluie verglaçante à pluie, par exemple). Elles sont aussi utiles pour les prévisions à court terme aux endroits avec des reliefs accidentés et le long des rivages, car l’influence des changements d’altitude, de topographie ou de nature du terrain sera mieux décrite pour les phénomènes à cette échelle (brises de lacs ou de mer, circulation locale dans des vallées, changements de phase, etc.). Même en terrain moins accidenté ou loin de l’eau du rivage, la justesse de ces prévisions pourrait s’avérer utile à long terme. Le SHRPD devrait également être pris en compte pour des prévisions hydrologiques sur de plus petits bassins.</p>
+<p>Dans le cadre d’un plan de modernisation du Service Météorologique Canadien (SMC), des <a href="https://collaboration.cmc.ec.gc.ca/cmc/cmoi/product_guide/docs/tech_notes/technote_weong-hrdps_f.pdf">éléments du temps sur grille</a> ("WEonG") cohérents, fusionnant les sorties brutes du modèle et post-traitées à l’aide de diverses approches diagnostiques sont également disponibles pour servir les différents programmes de prévision (public, maritime, aviation, qualité de l’air, etc.). Des concepts horaires sont ainsi produits à partir de différents algorithmes en utilisant des sorties provenant du SHRPD sur le domaine pan-canadien. Ces données sont disponibles sur une grille lat-lon tournée. </p>
 <h2 id="adresse-des-donnees">Adresse des données</h2>
 <p>Les données du Datamart du SMC peuvent être <a href="../../../msc-datamart/amqp_fr/">automatiquement récupérées avec le protocole avancé de mise en file d'attente des messages (AMQP)</a> dès qu'elles deviennent disponibles. Un <a href="../../../usage/readme_fr/">survol et exemples pour accéder et utiliser les données ouvertes du Service météorologique du Canada</a> est également disponible.</p>
 <p>Les données sont disponibles via le protocole HTTPS. Il est possible d’y accéder avec un fureteur standard. Dans ce cas, on obtient une liste de liens donnant accès à un fichier GRIB2.</p>
@@ -184,9 +185,10 @@
 <li><strong>domain</strong> : Chaîne de caractères indiquant le domaine représenté [continental, north, east, prairies, west, maritimes]</li>
 <li><strong>res</strong> : Résolution horizontale [2.5km]</li>
 <li><strong>HH</strong> : Heure UTC du début de la passe du modèle [00, 06, 12, 18], pour tous les domaines sauf le domaine Nord [00, 12]</li>
-<li><strong>hhh</strong> : Heure de prévision [000, 001, 002, ..., 048]</li>
+<li><strong>hhh</strong> : Heure de prévision [000, 001, 002, ..., 048] pour les grilles polaires stéréographiques et [001, 002, 003, ..., 048] pour la grille lat-lon tournée</li>
 </ul>
 <p>Un historique de 24 heures est conservé dans ce répertoire.</p>
+<p>Note: Certains algorithmes des éléments du temps sur grille ("WEonG") ont besoin des valeurs des variables à <code>t-1</code>, afin d'uniformiser l'offre de données, les heures de prévision débutent à 001h.</p>
 <h2 id="domaines-disponibles">Domaines disponibles</h2>
 <h3 id="specification-technique-des-grilles-continentales">Spécification technique des grilles continentales</h3>
 <ul>
@@ -446,7 +448,6 @@
 </tbody>
 </table>
 <h2 id="nomenclature-des-noms-de-fichiers">Nomenclature des noms de fichiers</h2>
-<p>NOTE: TOUTES LES HEURES SONT EN UTC.</p>
 <h3 id="grille-polaire-stereographique">Grille polaire stéréographique</h3>
 <p>Les fichiers ont la nomenclature suivante :</p>
 <p>CMC_hrdps_domain_Variable_TypedeNiveau_Niveau_ps2.5km_YYYYMMDDHH_Phhh-mm.grib2</p>
@@ -461,7 +462,7 @@
 <li><strong>ps2.5km</strong> : Chaîne de caractères constante indiquant que la projection utilisée est polaire stéréographique à une résolution de 2.5 km.</li>
 <li><strong>YYYYMMDD</strong> : Année, mois et jour du début de la prévision.</li>
 <li><strong>HH</strong> : Heure UTC de la passe [00, 06, 12, 18].</li>
-<li><strong>Phhh</strong> : « P » est un caractère constant. « hhh » représente l’heure de prévision [000, 001, 002, ..., 024/030/042/048].</li>
+<li><strong>Phhh</strong> : « P » est un caractère constant. « hhh » représente l’heure de prévision [000, 001, 002, ..., 048].</li>
 <li><strong>mm</strong> : « mm » représente les minutes de prévision [Codé en dur à 00 pour l’instant. Les pas de temps de 30 minutes seront disponibles éventuellement.].</li>
 <li><strong>grib2</strong> : Chaîne de caractères constante indiquant que le format est GRIB2.</li>
 </ul>
@@ -470,7 +471,10 @@ CMC_hrdps_east_DEPR_ISBL_0175_ps2.5km_2011092412_P003-00.grib2</p>
 <p>Le fichier a été créé par le CMC et contient une prévision du Système haute résolution de prévision déterministe. Il contient les dépressions du point de rosée (DEPR), au niveau isobarique 175 mb (ISBL_0175), sur une grille polaire stéréographique à une résolution de 2,5 km (ps2.5km). Il débute le 24 septembre 2011 à 12Z (2011092412). Il contient l’heure de prévision 03 (P003) et les minutes de prévision (00) en format GRIB2 (.grib2).</p>
 <h3 id="grille-lat-lon-tournee">Grille lat-lon tournée</h3>
 <p>Les fichiers ont la nomenclature suivante :</p>
-<p>{YYYYMMDD}T{HH}Z_MSC_HRDPS_{VAR}<em>{LVLTYPE-LVL}</em>{Grille}{resolution}_P{hhh}.grib2</p>
+<ul>
+<li>{YYYYMMDD}T{HH}Z_MSC_HRDPS_{VAR}<em>{LVLTYPE-LVL}</em>{Grille}{resolution}_P{hhh}.grib2</li>
+<li>{YYYYMMDD}T{HH}Z_MSC_HRDPS-WEonG_{VAR}<em>{LVLTYPE-LVL}</em>{Grille}{resolution}_PT{hhh}H.grib2</li>
+</ul>
 <p>où :</p>
 <ul>
 <li><strong>YYYYMMDD</strong> : Année, mois et jour du début de la prévision</li>
@@ -478,17 +482,21 @@ CMC_hrdps_east_DEPR_ISBL_0175_ps2.5km_2011092412_P003-00.grib2</p>
 <li><strong>HH</strong> : Heure UTC de la passe [00, 12]</li>
 <li><strong>Z</strong> : Fuseau horaire (heure UTC)</li>
 <li><strong>MSC</strong> : Chaîne de caractères constante pour Meteorological Service of Canada, la source des données</li>
-<li><strong>HRDPS</strong> : Chaîne de caractères constante indiquant que les données proviennent du Système haute résolution de prévision déterministe.</li>
+<li><strong>HRDPS</strong> : Chaîne de caractères constante indiquant que les données proviennent du Système haute résolution de prévision déterministe</li>
+<li><strong>HRDPS-WEonG</strong> : Chaîne de caractères constante indiquant que les données proviennent des éléments du temps sur grille ("WEonG") du Système haute résolution de prévision déterministe</li>
 <li><strong>VAR</strong> : Type de variable contenu dans le fichier (ex: UGRD).</li>
-<li><strong>LVLTYPE-LVL</strong> : Niveau vertical et hauteur [ex: SFC pour la surface, EATM pour l’intégrale de la colonne, DBS-10-20cm couche entre 10 et 20cm sous la surface]</li>
+<li><strong>LVLTYPE-LVL</strong> : Niveau vertical et hauteur [ex: SFC ou Sfc pour la surface, EATM pour l’intégrale de la colonne, DBS-10-20cm couche entre 10 et 20cm sous la surface, AGL-10m pour la hauteur de 10m au-dessus du sol]</li>
 <li><strong>Grille</strong> : Grille horizontale [RLatLon]</li>
 <li><strong>resolution</strong> : 0.0225. Signifie une résolution de 0.0225°(environ 2.5km) dans les directions longitudinale et latitudinale</li>
-<li><strong>P{hhh}</strong> : « P » est un caractère constant. « hhh » représente l’heure de prévision [000, 001, 002, ..., 024/030/042/048].</li>
+<li><strong>P{hhh}</strong> : « P » est un caractère constant. « hhh » représente l’heure de prévision [000, 001, 002, ..., 048]</li>
+<li><strong>PT{hhh}H</strong> : Echéance temporelle selon la norme <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601</a>. P, T et H sont des caractères constants désignant Période, Temps et Heure. "hhh" représente l’heure de prévision [001, 002, 003, ..., 048]</li>
 <li><strong>grib2</strong> : Chaîne de caractères constante indiquant que le format est GRIB2.</li>
 </ul>
-<p>Exemple de nom de fichier :
-20201123T00Z_MSC_HRDPS_GUST_AGL-10m_RLatLon0.0225_P012.grib2</p>
-<p>Le fichier a été créé par le MSC et contient une prévision du Système haute résolution de prévision déterministe. Il contient les rafales de vent (GUST), à 10 mètres au-dessus du sol (AGL-10m), sur une lat-lon tournée (RLatLon) à une résolution de 2,5 km (0.0225). La prévision débute le 23 novembre 2020 à 00Z (20201123T00Z) et contient l’heure de prévision 12 (P012) en format GRIB2 (grib2).</p>
+<p>Exemples de nom de fichier :</p>
+<ul>
+<li>20201123T00Z_MSC_HRDPS_GUST_AGL-10m_RLatLon0.0225_P012.grib2</li>
+<li>20220821T12Z_MSC_HRDPS-WEonG_VISIFOG_Sfc_RLatLon0.0225_PT024H.grib2</li>
+</ul>
 <h2 id="niveaux">Niveaux</h2>
 <p>La couverture verticale des champs tridimensionnels peut atteindre jusqu’à 31 niveaux isobariques.</p>
 <p>Niveaux isobariques (hPa) : 1015, 1000, 985, 970, 950, 925, 900, 850, 800, 750, 700, 650, 600, 550, 500, 450, 400, 350, 300, 275, 250, 225, 200, 175, 150, 100, 50.</p>
@@ -505,15 +513,197 @@ CMC_hrdps_east_DEPR_ISBL_0175_ps2.5km_2011092412_P003-00.grib2</p>
 <li>Colonne atmosphérique entière</li>
 </ul>
 <h2 id="liste-des-variables">Liste des variables</h2>
-<p>Attention : les tableaux ci-dessous ne sont pas à jour (à venir), certaines variables sont manquantes. N'hésitez pas à <a href="mailto:ec.dps-client.ec@canada.ca">nous contacter</a> pour plus d'information.</p>
+<p>Attention : les tableaux ci-dessous ne sont pas à jour (à venir), certaines variables sont manquantes. N'hésitez pas à <a href="https://meteo.gc.ca/mainmenu/contact_us_f.html">nous contacter</a> pour plus d'information.</p>
 <ul>
 <li><a href="https://meteo.gc.ca/grib/HRDPS_HR/HRDPS_nat_ps2p5km_P000_deterministic_f.html">Prévisions à 000h</a></li>
 <li><a href="https://meteo.gc.ca/grib/HRDPS_HR/HRDPS_ps2p5km_PNONZERO_deterministic_f.html">Prévisions pour les heures suivant 000h</a></li>
 </ul>
+<p>Liste des éléments du temps sur grille à la surface (<em>HRDPS-WEonG</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Abréviation du paramètre GRIB2</th>
+<th>Description</th>
+<th>Unité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BSNOW</td>
+<td>Présence de poudrerie</td>
+<td>binaire (0/1)</td>
+</tr>
+<tr>
+<td>CFRZR</td>
+<td>Probabilité de pluie verglaçante</td>
+<td>%</td>
+</tr>
+<tr>
+<td>CICEP</td>
+<td>Probabilité de grésil</td>
+<td>%</td>
+</tr>
+<tr>
+<td>CONDARAIN</td>
+<td>Quantité conditionnelle de précipitation liquide</td>
+<td>m</td>
+</tr>
+<tr>
+<td>CONDASNOW</td>
+<td>Quantité conditionnelle de neige solide</td>
+<td>m</td>
+</tr>
+<tr>
+<td>CONDICEP</td>
+<td>Quantité conditionnelle de granulés de glace solide</td>
+<td>m</td>
+</tr>
+<tr>
+<td>CP</td>
+<td>Caractère de la précipitation</td>
+<td>0=aucune; 1=averse; 2=intermittente; 3=continue</td>
+</tr>
+<tr>
+<td>CRAIN</td>
+<td>Probabilité de pluie</td>
+<td>%</td>
+</tr>
+<tr>
+<td>CSNOW</td>
+<td>Probabilité de neige</td>
+<td>%</td>
+</tr>
+<tr>
+<td>DIST</td>
+<td>Orographie du modèle</td>
+<td>m</td>
+</tr>
+<tr>
+<td>DPT</td>
+<td>Température du point de rosée</td>
+<td>C</td>
+</tr>
+<tr>
+<td>DPTYPE</td>
+<td>Type dominant de précipitation</td>
+<td>101=pluie; 110=grêle; 111=bruine; 203=pluie verglaçante; 212=bruine verglaçante; 308=grésil; 405=neige; 409=granulés de neige; 413=cristaux de glace; 414=grains de neige</td>
+</tr>
+<tr>
+<td>FZPRATE</td>
+<td>Quantité conditionnelle de précipitation verglaçante</td>
+<td>m</td>
+</tr>
+<tr>
+<td>GUST</td>
+<td>Rafale de vents</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td>HSNOWL</td>
+<td>Hauteur du niveau de la neige</td>
+<td>m</td>
+</tr>
+<tr>
+<td>LAND</td>
+<td>Masque terre/eau</td>
+<td>fraction</td>
+</tr>
+<tr>
+<td>PARAIN</td>
+<td>Probabilité de précipitation liquide</td>
+<td>%</td>
+</tr>
+<tr>
+<td>PBSNOW</td>
+<td>Probabilité de poudrerie</td>
+<td>%</td>
+</tr>
+<tr>
+<td>PDZ</td>
+<td>Probabilité de bruine</td>
+<td>%</td>
+</tr>
+<tr>
+<td>PFRDZ</td>
+<td>Probabilité de bruine verglaçante</td>
+<td>%</td>
+</tr>
+<tr>
+<td>PFRZR</td>
+<td>Probabilité de précipitation verglaçante</td>
+<td>%</td>
+</tr>
+<tr>
+<td>POP</td>
+<td>Probabilité de précipitation</td>
+<td>%</td>
+</tr>
+<tr>
+<td>PRATE</td>
+<td>Quantité conditionnelle de précipitation</td>
+<td>m</td>
+</tr>
+<tr>
+<td>PSNOWS</td>
+<td>Probabilité de bourrasque de neige</td>
+<td>%</td>
+</tr>
+<tr>
+<td>PTYPE</td>
+<td>Type de précipitation instantanée</td>
+<td>1=pluie; 2=pluie/neige; 3=pluie verglaçante; 4=grésil; 5=neige; 6=aucune; 7=bruine; 8=bruine verglaçante; 9=précipitation verglaçante/grésil</td>
+</tr>
+<tr>
+<td>SCNDPTYPE</td>
+<td>Type de précipitation secondaire</td>
+<td>101=pluie; 110=grêle; 111=bruine; 203=pluie verglaçante; 212=bruine verglaçante; 308=grésil; 405=neige; 409=granulés de neige; 413=cristaux de glace; 414=grains de neige</td>
+</tr>
+<tr>
+<td>SK</td>
+<td>Etat du ciel jour/nuit (couverture et opacité nuageuse combinées)</td>
+<td>0-1=ensoleillé/dégagé; 2-3=généralement ensoleillé/quelques nuages; 4-5-6=alternance de soleil et de nuages/partiellement nuageux; 7-8=généralement nuageux/généralement nuageux; 9=nuageux/nuageux; 10=nuageux/couvert</td>
+</tr>
+<tr>
+<td>TMP</td>
+<td>Température</td>
+<td>C</td>
+</tr>
+<tr>
+<td>TPII</td>
+<td>Indice d'intensité des précipitations totales</td>
+<td>0=aucune intensité; 1=faible; 2=modéré; 3=fort</td>
+</tr>
+<tr>
+<td>TSTM</td>
+<td>Probabilité d'occurence d'orage</td>
+<td>%</td>
+</tr>
+<tr>
+<td>VISIFOG</td>
+<td>Visibilité dans le brouillard glacé</td>
+<td>m</td>
+</tr>
+<tr>
+<td>VISLFOG</td>
+<td>Visibilité à travers le brouillard liquide</td>
+<td>m</td>
+</tr>
+<tr>
+<td>WDIR</td>
+<td>Direction du vent</td>
+<td>Degré vrai</td>
+</tr>
+<tr>
+<td>WIND</td>
+<td>Vitesse du vent</td>
+<td>m/s</td>
+</tr>
+</tbody>
+</table>
 <h2 id="a-propos-du-masque-no-data-sur-la-grille-polaire-stereographique-continentale">À propos du masque No-Data sur la grille polaire stéréographique continentale</h2>
 <p>Depuis le 18 octobre 2016, un masque pour mieux représenter les zones où les données ne sont pas disponibles, appelées aussi "No-Data" a été ajouté dans notre procédure d’encodage GRIB2. Ce masque vise uniquement quelques points de grille non-valides (données non-disponibles), toujours les mêmes et qui se situent en périphérie du domaine. Notons que ces points masqués n’ont aucun effet négatif sur la qualité du produit.</p>
 <h2 id="support">Support</h2>
-<p>Pour toute question relative à ces données, merci de nous contacter à l'adresse : <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
+<p>Pour toute question relative à ces données, merci de <a href="https://meteo.gc.ca/mainmenu/contact_us_f.html">communiquer avec nous</a>.</p>
 <h2 id="annonces-de-la-liste-de-diffusion-dd_info">Annonces de la liste de diffusion dd_info</h2>
 <p>Les annonces reliées à ce jeu de données sont disponibles via la liste <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/dd_info">dd_info</a>.</p></div>
             </div>

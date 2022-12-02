@@ -171,13 +171,13 @@
 </ul>
 <p>où :</p>
 <ul>
-<li><strong>HH</strong> : Heure en UTC du début de la simulation [00,12]</li>
-<li><strong>hhh</strong> : Heure de la prévision [000,001, ...,144] </li>
+<li><strong>HH</strong> : Heure en UTC du début de la simulation [00, 12]</li>
+<li><strong>hhh</strong> : Heure de la prévision [000, 001, ..., 144] </li>
 </ul>
 <p>Un historique de 24h de prévision est stocké dans ce répertoire.</p>
 <h2 id="specification-technique-de-la-grille">Spécification technique de la grille</h2>
-<p><img alt="Image du domaine HRDLPS" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_hrdlps/grille_hrdlps.png" /> ... <em>To be completed</em> ...</p>
-<p>Valeurs données aux paramètres de la grille lat-lon tournée à 2.5km de résolution:</p>
+<p><img alt="Image du domaine HRDLPS" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_hrdlps/grille_hrdlps.png" /></p>
+<p>Valeurs données aux paramètres de la grille lat-lon tournée à 2.5 km de résolution:</p>
 <table>
 <thead>
 <tr>
@@ -188,36 +188,35 @@
 <tbody>
 <tr>
 <td>ni</td>
-<td><em>To be completed</em></td>
+<td>2540</td>
 </tr>
 <tr>
 <td>nj</td>
-<td><em>To be completed</em></td>
+<td>1290</td>
 </tr>
 <tr>
 <td>résolution à 45° N</td>
-<td>2.5km</td>
+<td>2.5 km</td>
 </tr>
 </tbody>
 </table>
 <h2 id="nomenclature-des-noms-de-fichiers">Nomenclature des noms de fichiers</h2>
-<p>NOTE: TOUTES LES HEURES SONT EN UTC.</p>
 <p>La nomenclature des noms des fichiers est la suivante :</p>
 <p><code>{YYYYMMDD}T{HH}Z_MSC_HRDLPS_{VAR}_{LVLTYPE}-{LVL}_{grille}{resolution}_PT{hhh}H.nc</code></p>
 <p>où :</p>
 <ul>
 <li><strong>YYYYMMDD</strong> : Année, mois et jour du début de la prévision</li>
 <li><strong>T</strong> : Délimiteur temporel selon les normes ISO8601</li>
-<li><strong>HH</strong> : Heure UTC de la passe [00,12]</li>
+<li><strong>HH</strong> : Heure UTC de la passe [00, 12]</li>
 <li><strong>Z</strong> : Fuseau horaire (heure UTC)</li>
 <li><strong>MSC</strong> : Chaîne de caractères constante pour Meteorological Service of Canada, la source des données</li>
 <li><strong>HRDLPS</strong> : Chaîne de caractères constante indiquant que les données proviennent du Système de prévision déterministe à haute résolution de la surface</li>
 <li><strong>VAR</strong> : Variables contenues dans le fichier (voir section ci-dessous). Ce paramètre comprend aussi le processus statistique associé si pertinent (ex: Accum143h pour une accumulation sur 143 heures)</li>
 <li><strong>LVLTYPE</strong> : Type de niveau vertical [Sfc pour la surface, DBS pour la profondeur sous la surface, AGL pour la hauteur au-dessus du sol]</li>
-<li><strong>LVL</strong> : Valeur du niveau vertical [10m, 0.5m, 1.5m, 2m, <code>0-2m</code> de la surface à 2 mètres]. Ce paramètre est absent pour la surface</li>
+<li><strong>LVL</strong> : Valeur du niveau vertical [<code>1.5m</code>; <code>2m</code>; <code>all</code> regroupe tous les niveaux <code>0.025m, 0.075m, 0.15m, 0.3m, 0.7m, 1.5m, 2.5m</code>; <code>0-2 m</code> de la surface à 2 mètres]. Ce paramètre est absent pour la surface</li>
 <li><strong>grille</strong> : Grille horizontale [RLatLon]</li>
-<li><strong>resolution</strong> : Indique la résolution en degré dans les directions longitudinale et latitudinale soit ici 0.0225(environ 2.5km) dans les deux directions</li>
-<li><strong>PT{hhh}H</strong> : Echéance temporelle selon la norme <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601</a>. P, T et H sont des caractères constants désignant Période, Temps et Heure. "hhh" représente l’heure de prévision  [000,001, ...,144]</li>
+<li><strong>resolution</strong> : Indique la résolution en degré dans les directions longitudinale et latitudinale soit ici 0.0225(environ 2.5 km) dans les deux directions</li>
+<li><strong>PT{hhh}H</strong> : Echéance temporelle selon la norme <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601</a>. P, T et H sont des caractères constants désignant Période, Temps et Heure. "hhh" représente l’heure de prévision  [000, 001, ..., 144]</li>
 <li><strong>nc</strong> : Chaîne de caractères constante indiquant que le format est NetCDF</li>
 </ul>
 <p>Exemples :</p>
@@ -227,13 +226,79 @@
 </ul>
 <h2 id="liste-des-variables">Liste des variables</h2>
 <p>Liste des variables disponibles dans les fichiers:</p>
-<ul>
-<li><strong>AirTemp</strong> : Température de l'air à 1.5 mètres en altitude (K)</li>
-<li><strong>WindU</strong>: Composante X de la vitesse du vent à 10 mètres en altitude (m/s)</li>
-<li><strong>WindV</strong>: Composante Y de la vitesse du vent à 10 mètres en altitude (m/s)</li>
-<li><strong>Runoff</strong> : Ruissellement (mm)</li>
-<li>ETC.... <em>To be completed</em>... See: https://eccc-msc.github.io/open-data/msc-data/nwp_wcps/readme_wcps-atm-ocean-datamart_fr/#liste-des-variables</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Description</th>
+<th>Niveau</th>
+<th>Unité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tt</td>
+<td>Température de l'air</td>
+<td>AGL</td>
+<td>K</td>
+</tr>
+<tr>
+<td>td</td>
+<td>Température du point de rosée</td>
+<td>AGL</td>
+<td>K</td>
+</tr>
+<tr>
+<td>acwf</td>
+<td>Accumulation de l'évaporation de la surface terrestre</td>
+<td>Sfc</td>
+<td>kg.m-2</td>
+</tr>
+<tr>
+<td>tg</td>
+<td>Température radiative agrégée à la surface</td>
+<td>Sfc</td>
+<td>K</td>
+</tr>
+<tr>
+<td>traf</td>
+<td>Accumulation du ruissellement de surface</td>
+<td>Sfc</td>
+<td>kg.m-2</td>
+</tr>
+<tr>
+<td>wt</td>
+<td>Fraction d'aire occupée par le sol</td>
+<td>Sfc</td>
+<td>1</td>
+</tr>
+<tr>
+<td>mf</td>
+<td>Orographie</td>
+<td>Sfc</td>
+<td>m</td>
+</tr>
+<tr>
+<td>wsol</td>
+<td>Contenu volumique d'eau liquide dans le sol</td>
+<td>DBS</td>
+<td>m3.m-3</td>
+</tr>
+<tr>
+<td>o1</td>
+<td>Accumulation du drainage à la base de la couche de sol</td>
+<td>DBS</td>
+<td>kg.m-2</td>
+</tr>
+<tr>
+<td>alat</td>
+<td>Accumulation de l'écoulement total latéral</td>
+<td>DBS</td>
+<td>kg.m-2</td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: la fraction d'aire occupée par le sol (<code>wt</code>) et l'orographie (<code>mf</code>) sont seulement disponibles à l'échéance 00h.</p>
 <h2 id="support">Support</h2>
 <p>Pour toute question relative à ces données, merci de nous contacter à l'adresse : <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
 <h2 id="annonces-de-la-liste-de-diffusion-dd_info">Annonces de la liste de diffusion dd_info</h2>
