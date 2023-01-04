@@ -190,13 +190,19 @@
 <p>Le guide d’installation peut être trouvé à cette adresse : <a href="https://metpx.github.io/sarracenia/Tutorials/Install.html">https://metpx.github.io/sarracenia/Tutorials/Install.html</a></p>
 <p>Quant au guide d’utilisation, il est disponible ici : <a href="https://metpx.github.io/sarracenia/How2Guides/subscriber.html">https://metpx.github.io/sarracenia/How2Guides/subscriber.html</a></p>
 <p>Plusieurs exemples de fichiers de configuration sont également mis à la disposition des usagers : <a href="https://github.com/MetPX/sarracenia/tree/main/sarracenia/examples/subscribe">https://github.com/MetPX/sarracenia/tree/main/sarracenia/examples/subscribe</a></p>
-<p><strong>NOTE</strong>:</p>
+<p><strong>NOTES</strong>:</p>
 <p><strong>Pour faciliter le support</strong>, il est suggéré aux usagers de s'identifier afin de retracer plus facilement les queues en cas de problèmes. Il est donc très fortement recommandé d'ajouter l'une des lignes suivantes dans la configuration de sr_subscribe:</p>
 <ul>
 <li>queue_name q_${BROKER_USER}.${PROGRAM}.${CONFIG}.${HOSTNAME}  (option dynamique)</li>
 <li>q_anonymous.sr_subscribe./nom_config/./nom_compagnie/ (option statique)</li>
 </ul>
 <p>Exemple : q_anonymous.sr_subscribe.citypage.compagnie</p>
+<p>Aussi, voici une liste de recommandations pour l'usager "anonymous" qui souhaite récupérer un sous-ensemble significatif de données sans crainte de perte d'information:</p>
+<ul>
+<li>L'option <code>expire</code> permet d'ajuster la période de rétention souhaitée par l'utilisateur. On suggère une valeur supérieure à 5 minutes, qui est la valeur par défaut.  </li>
+<li>Augmenter le nombre d'instances dans la configuration ce qui permet de traiter plus efficacement les messages afin de minimiser leur nombre dans la queue.</li>
+<li>Séparer les configurations en plusieurs configurations plus petites afin d'éviter d'atteindre le maximum de 10000 messages dans une queue (le nom des queues doit être différent entre les configurations).</li>
+</ul>
 <h2 id="environnement-windows">Environnement Windows</h2>
 <p>Dans l’environnement Windows, il suffit de télécharger la dernière version de Sarracenia à cette adresse :</p>
 <p><a href="https://hpfx.collab.science.gc.ca/~pas037/Sarracenia_Releases/">https://hpfx.collab.science.gc.ca/~pas037/Sarracenia_Releases/</a></p>

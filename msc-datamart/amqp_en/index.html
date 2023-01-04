@@ -201,6 +201,12 @@
 <li>q_anonymous.sr_subscribe.config_name.company_name (static option)</li>
 </ul>
 <p>Example: q_anonymous.sr_subscribe.citypage.companyX</p>
+<p>Also, here is a list of recommendations for the "anonymous" user who wishes to retrieve a significant subset of data without fear of losing information:</p>
+<ul>
+<li>The <code>expire</code> option reflects the user's desired retention period. We suggest a value greater than 5 minutes, which is the default.  </li>
+<li>Increase the number of instances in the configuration which allows for more efficient processing of messages to minimize their number in the queue.</li>
+<li>Split the configurations into several smaller configurations to avoid reaching the maximum of 10,000 messages in a queue (the name of the queues must be different between the configurations)</li>
+</ul>
 <h2 id="windows-environment">Windows environment</h2>
 <p>Working with the Windows environment, simply download the latest version of Sarracenia at this address:</p>
 <p><a href="https://hpfx.collab.science.gc.ca/~pas037/Sarracenia_Releases/">https://hpfx.collab.science.gc.ca/~pas037/Sarracenia_Releases/</a></p>
