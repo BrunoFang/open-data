@@ -134,6 +134,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#file-content" class="nav-link">File content</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#support" class="nav-link">Support</a>
               <ul class="nav flex-column">
               </ul>
@@ -178,6 +182,34 @@
 <li><strong>MetNotes</strong> : Constant string indicating that data is from MetNotes</li>
 <li><strong>json</strong> : File extention indicating the GeoJSON format</li>
 </ul>
+<h2 id="file-content">File content</h2>
+<p>The time fields in the GeoJSON file are defined as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start_datetime</td>
+<td>The forecaster defined time when the weather conditions addressed by the MetNote are expected to begin.</td>
+</tr>
+<tr>
+<td>end_datetime</td>
+<td>The forecaster-defined time when the weather conditions addressed by the MetNote are no longer expected.</td>
+</tr>
+<tr>
+<td>expire_datetime</td>
+<td>If more than 27 hours have passed since a MetNote has been published (Stale time + 3 hour’s grace), it will be considered Expired and automatically removed from dissemination platforms.</td>
+</tr>
+<tr>
+<td>publish_datetime</td>
+<td>The time that the forecaster indicates a MetNote MetObject is ready for product generation.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="support">Support</h2>
 <p>If you have any questions about this data, please contact us at: <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
 <h2 id="announcements-from-the-dd_info-mailing-list">Announcements from the dd_info mailing list</h2>
