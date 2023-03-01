@@ -134,6 +134,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#contenu-du-fichier" class="nav-link">Contenu du fichier</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#support" class="nav-link">Support</a>
               <ul class="nav flex-column">
               </ul>
@@ -182,7 +186,35 @@
 <ul>
 <li>20220207T000000.123Z_MSC_MetNotes.json</li>
 </ul>
-<p><strong>Note</strong> : L'utilisation des millisecondes est requise pour assurer l'unicité des notes émises </p>
+<p><strong>Note</strong> : L'utilisation des millisecondes est requise pour assurer l'unicité des notes émises.</p>
+<h2 id="contenu-du-fichier">Contenu du fichier</h2>
+<p>Les champs temporels dans le fichier GeoJSON sont définis comme suit :</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start_datetime</td>
+<td>Le moment défini par le prévisionniste où les conditions météorologiques abordées par la MetNote devraient commencer.</td>
+</tr>
+<tr>
+<td>end_datetime</td>
+<td>Le moment défini par le prévisionniste où les conditions météorologiques abordées par la MetNote ne sont plus attendues.</td>
+</tr>
+<tr>
+<td>expire_datetime</td>
+<td>Si plus de 27 heures se sont écoulées depuis la publication d'une MetNote (délai d'expiration + 3 heures de grâce), celle-ci sera considérée comme expirée et automatiquement retirée des plateformes de diffusion.</td>
+</tr>
+<tr>
+<td>publish_datetime</td>
+<td>Le moment auquel le prévisionniste indique qu'un MetObject d'une MetNote est prêt pour la génération du produit.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="support">Support</h2>
 <p>Pour toute question relative à ces données, merci de nous contacter à l'adresse : <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
 <h2 id="annonces-de-la-liste-de-diffusion-dd_info">Annonces de la liste de diffusion dd_info</h2>
