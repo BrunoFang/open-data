@@ -168,16 +168,30 @@
 <h2 id="usage">Usage</h2>
 <p>The <a href="../../../usage/readme_en/">usage overview page</a> provides generic information on using these services with desktop software, mobile apps, interactive web maps and direct access. Please refer to the <a href="../../../msc-geomet/readme_en/">tutorials and technical documentation on MSC GeoMet geospatial web services</a> for detailed information. See also the <a href="../readme_radar_en/">main weather radar data page</a> which links to additional information on weather radar.</p>
 <h3 id="available-layers">Available layers</h3>
-<p>Weather radar layers are updated every 10 minutes. The last 3 hours of data is available on MSC GeoMet. </p>
-<p>North-American weather radar composite at 1 km:</p>
+<p>Weather radar layers are updated every 6 minutes. The last 3 hours of data is available on MSC GeoMet. </p>
+<p>North American radar composite [1 km]:</p>
 <ul>
-<li>Radar precipitation rate (Rain) (1 km) [mm/hr], ID: <code>RADAR_1KM_RRAI</code></li>
-<li>Radar precipitation rate (Snow) (1 km) [cm/hr], ID: <code>RADAR_1KM_RSNO</code></li>
+<li>Radar precipitation rate for rain [mm/hr], ID: <code>RADAR_1KM_RRAI</code></li>
+<li>Radar precipitation rate for snow [cm/hr], ID: <code>RADAR_1KM_RSNO</code></li>
 <li>Corresponding dynamic radar coverage layers:<ul>
 <li>Coverage for Rain, ID: <code>RADAR_COVERAGE_RRAI</code>. ID for inverted style: <code>RADAR_COVERAGE_RRAI.INV</code></li>
 <li>Coverage for Snow, ID: <code>RADAR_COVERAGE_RSNO</code>. ID for inverted style: <code>RADAR_COVERAGE_RSNO.INV</code></li>
 </ul>
 </li>
+</ul>
+<p>North American radar surface precipitation type [1 km]:</p>
+<ul>
+<li>Radar surface precipitation type [experimental], ID: <code>Radar_1km_SfcPrecipType</code></li>
+<li>Corresponding dynamic radar coverage layer [experimental]:<ul>
+<li>Coverage, ID: <code>Radar-Coverage_SfcPrecipType</code>. ID for inverted style: <code>Radar-Coverage_SfcPrecipType-Inverted</code></li>
+</ul>
+</li>
+</ul>
+<p>North American radar extrapolation [1 km]:</p>
+<ul>
+<li>Radar extrapolation precipitation rate for rain [mm/h] [experimental], ID: <code>Radar_1km_RainPrecipRate-Extrapolation</code></li>
+<li>Radar extrapolation precipitation rate for snow [mm/h] [experimental], ID: <code>Radar_1km_SnowPrecipRate-Extrapolation</code></li>
+<li>Radar extrapolation precipitation rate [dBZ] [experimental], ID: <code>Radar_1km_dBZ-Extrapolation</code></li>
 </ul>
 <h3 id="usage-tips">Usage tips</h3>
 <p>Retrieving the list of latest radar layer timesteps available:</p>

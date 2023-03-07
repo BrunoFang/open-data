@@ -168,16 +168,30 @@
 <h2 id="utilisation">Utilisation</h2>
 <p>La page de <a href="../../../usage/readme_fr/">l'aperçu de l'utilisation</a> présente l'information de base sur l'utilisation de ces services avec des logiciels de bureau, des applications mobiles, les cartes interactives en ligne ainsi que l'accès direct. Veuillez vous référer aux <a href="../../../msc-geomet/readme_fr/">tutoriels et à la documentation technique sur les services web géospatiaux GeoMet du SMC</a> pour de l'information détaillée. Voir également la <a href="../readme_radar_fr/">page d'accueil des données radar météo</a> qui pointe vers de l'information additionnelle sur les radars météo.</p>
 <h3 id="couches-disponibles">Couches disponibles</h3>
-<p>Les couches radar météo sont mises à jour toutes les 10 minutes. Les 3 dernières heures de données sont disponibles sur GeoMet du SMC.</p>
-<p>Composite radar météo nord-américaine à 1 km :</p>
+<p>Les couches radar météo sont mises à jour toutes les 6 minutes. Les 3 dernières heures de données sont disponibles sur GeoMet du SMC.</p>
+<p>Composite radar nord-américaine [1 km] :</p>
 <ul>
-<li>Taux de précipitation radar (Pluie) (1 km) [mm/hr], ID: <code>RADAR_1KM_RRAI</code></li>
-<li>Taux de précipitation radar (Neige) (1 km) [cm/hr], ID: <code>RADAR_1KM_RSNO</code></li>
+<li>Taux de précipitation radar pour la pluie [mm/hr], ID: <code>RADAR_1KM_RRAI</code></li>
+<li>Taux de précipitation radar pour la neige [cm/hr], ID: <code>RADAR_1KM_RSNO</code></li>
 <li>Couches de la couverture radar dynamique correspondantes :<ul>
 <li>Couverture pour la pluie, ID: <code>RADAR_COVERAGE_RRAI</code>. ID pour le style WMS inversé : <code>RADAR_COVERAGE_RRAI.INV</code></li>
 <li>Couverture pour la neige, ID: <code>RADAR_COVERAGE_RSNO</code>. ID pour le style WMS inversé: <code>RADAR_COVERAGE_RSNO.INV</code></li>
 </ul>
 </li>
+</ul>
+<p>Type de précipitation à la surface du radar nord-américan [1 km]:</p>
+<ul>
+<li>Type de précipitation à la surface du radar [expérimental], ID: <code>Radar_1km_SfcPrecipType</code></li>
+<li>Couches de la couverture radar dynamique correspondantes [expérimental]:<ul>
+<li>Couverture, ID: <code>Radar-Coverage_SfcPrecipType</code>. ID pour le style WMS inversé: <code>Radar-Coverage_SfcPrecipType-Inverted</code></li>
+</ul>
+</li>
+</ul>
+<p>Extrapolation radar nord-américaine [1 km]:</p>
+<ul>
+<li>Taux de précipitation radar extrapolé pour la pluie [mm/h] [expérimental], ID: <code>Radar_1km_RainPrecipRate-Extrapolation</code></li>
+<li>Taux de précipitation radar extrapolé pour la neige [mm/h] [expérimental], ID: <code>Radar_1km_SnowPrecipRate-Extrapolation</code></li>
+<li>Taux de précipitation radar extrapolé [dBZ] [expérimental], ID: <code>Radar_1km_dBZ-Extrapolation</code></li>
 </ul>
 <h3 id="conseils-dutilisation">Conseils d'utilisation</h3>
 <p>Récupération de la liste des derniers pas de temps disponibles :</p>
