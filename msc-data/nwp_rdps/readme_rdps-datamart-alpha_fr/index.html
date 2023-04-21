@@ -43,6 +43,10 @@
 </li>
                                     
 <li>
+    <a href="../../../msc-animet/readme_en/" class="dropdown-item">Display data and create animations with MSC AniMet /<br>Afficher les données et créer des animations avec AniMet du SMC</a>
+</li>
+                                    
+<li>
     <a href="../../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
 </li>
                                     
@@ -55,7 +59,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">Use case: anticipated profits based on precipitations probability</a>
+    <a href="../../../usage/use-case_arthur/use-case_arthur_en" class="dropdown-item">Make WMS Requests from Python /<br>Faire des requêtes WMS avec Python</a>
 </li>
                                     
 <li>
@@ -63,7 +67,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en/" class="dropdown-item">Use case: Retrieving and displaying hydrometric data</a>
+    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en" class="dropdown-item">Make OGC API - Feature requests from Python /<br>Faire des requêtes OGC API - Features avec Python</a>
 </li>
                                     
 <li>
@@ -217,7 +221,7 @@
 <li><strong>Z</strong> : Fuseau horaire (heure UTC)</li>
 <li><strong>MSC</strong> : Chaîne de caractères constante pour Meteorological Service of Canada, la source des données</li>
 <li><strong>RDPS-WEonG</strong> : Chaîne de caractères constante indiquant que les données proviennent des éléments du temps sur grille ("WEonG") du Système régional de prévision déterministe</li>
-<li><strong>VAR</strong> : Type de variable contenu dans le fichier (ex: VISIFOG).</li>
+<li><strong>VAR</strong> : Type de variable contenu dans le fichier (ex: VISIFG).</li>
 <li><strong>LVLTYPE-LVL</strong> : Niveau vertical [Sfc pour la surface]</li>
 <li><strong>Grille</strong> : Grille horizontale [RLatLon]</li>
 <li><strong>resolution</strong> : 0.09. Signifie une résolution de 0.09°(environ 10km) dans les directions longitudinale et latitudinale</li>
@@ -226,7 +230,7 @@
 </ul>
 <p>Exemple de nom de fichier :</p>
 <ul>
-<li>20220821T12Z_MSC_RDPS-WEonG_BSNOW_Sfc_RLatLon0.09_PT024H.grib2</li>
+<li>20220821T12Z_MSC_RDPS-WEonG_BLSN_Sfc_RLatLon0.09_PT024H.grib2</li>
 </ul>
 <h2 id="liste-des-variables">Liste des variables</h2>
 <p>Liste des éléments du temps sur grille à la surface:</p>
@@ -240,52 +244,52 @@
 </thead>
 <tbody>
 <tr>
-<td>BSNOW</td>
+<td>BLSN</td>
 <td>Présence de poudrerie</td>
 <td>binaire (0/1)</td>
 </tr>
 <tr>
-<td>CFRZR</td>
+<td>PROBFZRA</td>
 <td>Probabilité de pluie verglaçante</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CICEP</td>
+<td>PROBPL</td>
 <td>Probabilité de grésil</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CONDARAIN</td>
+<td>CANDALPCN</td>
 <td>Quantité conditionnelle de précipitation liquide</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CONDASNOW</td>
+<td>CONDASSN</td>
 <td>Quantité conditionnelle de neige solide</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CONDICEP</td>
+<td>CONDAPL</td>
 <td>Quantité conditionnelle de granulés de glace solide</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CP</td>
+<td>CHARPCPN</td>
 <td>Caractère de la précipitation</td>
 <td>0=aucune; 1=averse; 2=intermittente; 3=continue</td>
 </tr>
 <tr>
-<td>CRAIN</td>
+<td>PROBRA</td>
 <td>Probabilité de pluie</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CSNOW</td>
+<td>PROBSN</td>
 <td>Probabilité de neige</td>
 <td>%</td>
 </tr>
 <tr>
-<td>DIST</td>
+<td>ORGPHY</td>
 <td>Orographie du modèle</td>
 <td>m</td>
 </tr>
@@ -295,12 +299,12 @@
 <td>C</td>
 </tr>
 <tr>
-<td>DPTYPE</td>
+<td>DMNTPCPNTYPE</td>
 <td>Type dominant de précipitation</td>
 <td>101=pluie; 110=grêle; 111=bruine; 203=pluie verglaçante; 212=bruine verglaçante; 308=grésil; 405=neige; 409=granulés de neige; 413=cristaux de glace; 414=grains de neige</td>
 </tr>
 <tr>
-<td>FZPRATE</td>
+<td>CONDAFZPCPN</td>
 <td>Quantité conditionnelle de précipitation verglaçante</td>
 <td>m</td>
 </tr>
@@ -310,67 +314,67 @@
 <td>m/s</td>
 </tr>
 <tr>
-<td>HSNOWL</td>
+<td>HGTSNLVL</td>
 <td>Hauteur du niveau de la neige</td>
 <td>m</td>
 </tr>
 <tr>
-<td>LAND</td>
+<td>WTRLANMASK</td>
 <td>Masque terre/eau</td>
 <td>fraction</td>
 </tr>
 <tr>
-<td>PARAIN</td>
+<td>PROBLPCPN</td>
 <td>Probabilité de précipitation liquide</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PBSNOW</td>
+<td>PROBBLSN</td>
 <td>Probabilité de poudrerie</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PDZ</td>
+<td>PROBDZ</td>
 <td>Probabilité de bruine</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PFRDZ</td>
+<td>PROBFZDZ</td>
 <td>Probabilité de bruine verglaçante</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PFRZR</td>
+<td>PROBFZPCPN</td>
 <td>Probabilité de précipitation verglaçante</td>
 <td>%</td>
 </tr>
 <tr>
-<td>POP</td>
+<td>PROBPCPN</td>
 <td>Probabilité de précipitation</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PRATE</td>
+<td>CONDAPCPN</td>
 <td>Quantité conditionnelle de précipitation</td>
 <td>m</td>
 </tr>
 <tr>
-<td>PSNOWS</td>
+<td>PROBSNSQ</td>
 <td>Probabilité de bourrasque de neige</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PTYPE</td>
+<td>PCPNTYPE</td>
 <td>Type de précipitation instantanée</td>
 <td>1=pluie; 2=pluie/neige; 3=pluie verglaçante; 4=grésil; 5=neige; 6=aucune; 7=bruine; 8=bruine verglaçante; 9=précipitation verglaçante/grésil</td>
 </tr>
 <tr>
-<td>SCNDPTYPE</td>
+<td>SCNDPCPNTYPE</td>
 <td>Type de précipitation secondaire</td>
 <td>101=pluie; 110=grêle; 111=bruine; 203=pluie verglaçante; 212=bruine verglaçante; 308=grésil; 405=neige; 409=granulés de neige; 413=cristaux de glace; 414=grains de neige</td>
 </tr>
 <tr>
-<td>SK</td>
+<td>SKSTATE</td>
 <td>Etat du ciel jour/nuit (couverture et opacité nuageuse combinées)</td>
 <td>0-1=ensoleillé/dégagé; 2-3=généralement ensoleillé/quelques nuages; 4-5-6=alternance de soleil et de nuages/partiellement nuageux; 7-8=généralement nuageux/généralement nuageux; 9=nuageux/nuageux; 10=nuageux/couvert</td>
 </tr>
@@ -380,22 +384,22 @@
 <td>C</td>
 </tr>
 <tr>
-<td>TPII</td>
+<td>TPCPNINTSTI</td>
 <td>Indice d'intensité des précipitations totales</td>
 <td>0=aucune intensité; 1=faible; 2=modéré; 3=fort</td>
 </tr>
 <tr>
-<td>TSTM</td>
+<td>PROBTSOCRNC</td>
 <td>Probabilité d'occurence d'orage</td>
 <td>%</td>
 </tr>
 <tr>
-<td>VISIFOG</td>
+<td>VISIFG</td>
 <td>Visibilité dans le brouillard glacé</td>
 <td>m</td>
 </tr>
 <tr>
-<td>VISLFOG</td>
+<td>VISLFG</td>
 <td>Visibilité à travers le brouillard liquide</td>
 <td>m</td>
 </tr>
@@ -405,7 +409,7 @@
 <td>Degré vrai</td>
 </tr>
 <tr>
-<td>WIND</td>
+<td>WSPD</td>
 <td>Vitesse du vent</td>
 <td>m/s</td>
 </tr>

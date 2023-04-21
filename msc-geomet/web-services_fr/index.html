@@ -43,6 +43,10 @@
 </li>
                                     
 <li>
+    <a href="../../msc-animet/readme_en/" class="dropdown-item">Display data and create animations with MSC AniMet /<br>Afficher les données et créer des animations avec AniMet du SMC</a>
+</li>
+                                    
+<li>
     <a href="../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
 </li>
                                     
@@ -55,7 +59,7 @@
 </li>
                                     
 <li>
-    <a href="../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">Use case: anticipated profits based on precipitations probability</a>
+    <a href="../../usage/use-case_arthur/use-case_arthur_en" class="dropdown-item">Make WMS Requests from Python /<br>Faire des requêtes WMS avec Python</a>
 </li>
                                     
 <li>
@@ -63,7 +67,7 @@
 </li>
                                     
 <li>
-    <a href="../../usage/use-case_oafeat/use-case_oafeat-script_en/" class="dropdown-item">Use case: Retrieving and displaying hydrometric data</a>
+    <a href="../../usage/use-case_oafeat/use-case_oafeat-script_en" class="dropdown-item">Make OGC API - Feature requests from Python /<br>Faire des requêtes OGC API - Features avec Python</a>
 </li>
                                     
 <li>
@@ -833,7 +837,8 @@ ColorMapEntry%20color%3D%22%234d0000%22%20quantity%3D%22100%22%2F%3E%20%3C%2FCol
 <li><a href="https://api.meteo.gc.ca/collections/hydrometric-daily-mean/items?STATION_NUMBER=10CD001&amp;datetime=2001-01-01/2010-12-31">https://api.meteo.gc.ca/collections/hydrometric-daily-mean/items?STATION_NUMBER=10CD001&amp;datetime=2001-01-01/2010-12-31</a></li>
 </ul>
 <h4 id="exporter-au-format-csv">Exporter au format CSV</h4>
-<p>Toute requête peut être exportée au format CSV en ajoutant <code>f=csv</code> à la demande.</p>
+<p>Les requêtes pointant sur les pages des collections peuvent être exportées au format CSV en ajoutant <code>&amp;f=csv</code> à la requête, ou en cliquant sur l'icône <code>CSV</code> en haut à droite de la page de la collection.</p>
+<p>Exemple de requête : <a href="https://api.meteo.gc.ca/collections/ltce-temperature/items?f=csv">https://api.meteo.gc.ca/collections/ltce-temperature/items?f=csv</a></p>
 <h4 id="tri">Tri</h4>
 <p>Toute requête peut être triée utilisant le paramètre <code>sortby</code>. L'ordre de tri est croissant par défaut et ajoutez le signe <code>-</code> avant le nom de l'attribut pour un tri décroissant. Le tri en fonction de plusieurs attributs est pris en charge en fournissant une liste séparée par des virgules au paramètre <code>sortby</code>. Exemples :</p>
 <ul>

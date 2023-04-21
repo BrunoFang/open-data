@@ -43,6 +43,10 @@
 </li>
                                     
 <li>
+    <a href="../../../msc-animet/readme_en/" class="dropdown-item">Display data and create animations with MSC AniMet /<br>Afficher les données et créer des animations avec AniMet du SMC</a>
+</li>
+                                    
+<li>
     <a href="../../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
 </li>
                                     
@@ -55,7 +59,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">Use case: anticipated profits based on precipitations probability</a>
+    <a href="../../../usage/use-case_arthur/use-case_arthur_en" class="dropdown-item">Make WMS Requests from Python /<br>Faire des requêtes WMS avec Python</a>
 </li>
                                     
 <li>
@@ -63,7 +67,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en/" class="dropdown-item">Use case: Retrieving and displaying hydrometric data</a>
+    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en" class="dropdown-item">Make OGC API - Feature requests from Python /<br>Faire des requêtes OGC API - Features avec Python</a>
 </li>
                                     
 <li>
@@ -177,9 +181,8 @@
 <li><a href="https://dd.weather.gc.ca/model_rdwps/ontario/1km">https://dd.weather.gc.ca/model_rdwps/ontario/1km/{HH}/</a></li>
 <li><a href="https://dd.weather.gc.ca/model_rdwps/superior/1km">https://dd.weather.gc.ca/model_rdwps/superior/1km/{HH}/</a></li>
 </ul>
-<p>Rotated lat-lon grids:</p>
+<p>Rotated lat-lon grid:</p>
 <ul>
-<li><a href="https://dd.weather.gc.ca/model_rdwps/atlantic-nw/5km">https://dd.weather.gc.ca/model_rdwps/atlantic-nw/5km/{HH}/</a></li>
 <li><a href="https://dd.meteo.gc.ca/model_rdwps/national/2.5km">https://dd.meteo.gc.ca/model_rdwps/national/2.5km/{HH}/</a></li>
 </ul>
 <p>where :</p>
@@ -187,6 +190,7 @@
 <li><strong>HH</strong> : Model run start, in UTC [00, 06, 12, 18]</li>
 </ul>
 <p>A 24-hour history is stored in this directory.</p>
+<p>Note: The national domain is a post-processed composite of all the RDWPS domains.</p>
 <h2 id="available-domains">Available Domains</h2>
 <h3 id="lake-superior">Lake Superior</h3>
 <ul>
@@ -312,37 +316,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="atlantic-north-west">Atlantic North-West</h3>
-<ul>
-<li><strong>Rotated lat-lon grid</strong></li>
-</ul>
-<p><img alt="" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_rdwps/grille_rdwps-nwa.png" /></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ni</td>
-<td>762</td>
-</tr>
-<tr>
-<td>nj</td>
-<td>643</td>
-</tr>
-<tr>
-<td>resolution</td>
-<td>0.045° x 0.045°</td>
-</tr>
-<tr>
-<td>coordinate of first grid point</td>
-<td>41.065° N  255.718° W</td>
-</tr>
-</tbody>
-</table>
 <h3 id="national">National</h3>
 <ul>
 <li><strong>Rotated lat-lon grid</strong></li>
@@ -386,7 +359,7 @@
 <li><strong>Z</strong> : Time zone (UTC hour)</li>
 <li><strong>MSC</strong> : Constant string indicating the Meteorological Service of Canada, source of data</li>
 <li><strong>RDWPS</strong> : Constant string indicating that data is from the Regional Deterministic Wave Prediction System</li>
-<li><strong>DOMAIN</strong> : Constant string indicating the domain [erie, huron-michigan, ontario, superior, atlantic-nw]</li>
+<li><strong>DOMAIN</strong> : Constant string indicating the domain [erie, huron-michigan, ontario, superior, national]</li>
 <li><strong>VAR</strong> : Variables included in the file</li>
 <li><strong>LVL</strong> : Vertical level [Sfc for the surface, AGL for fixed height above ground]</li>
 <li><strong>Grid</strong> : Horizontal grid type [LatLon, RLatLon]</li>
@@ -398,7 +371,6 @@
 <p>Examples of file name :</p>
 <ul>
 <li>20211014T00Z_MSC_RDWPS-Lake-Erie_HTSGW_Sfc_LatLon0.009x0.012_PT003H.grib2</li>
-<li>20211014T00Z_MSC_RDWPS-Atlantic-North-West_ICEC_Sfc_RLatLon0.045_PT037H.grib2</li>
 <li>20211014T00Z_MSC_RDWPS_VGRD_AGL-10m_RLatLon0.0225_PT037H.grib2</li>
 </ul>
 <h2 id="levels">Levels</h2>

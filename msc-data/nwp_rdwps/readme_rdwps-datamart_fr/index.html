@@ -43,6 +43,10 @@
 </li>
                                     
 <li>
+    <a href="../../../msc-animet/readme_en/" class="dropdown-item">Display data and create animations with MSC AniMet /<br>Afficher les données et créer des animations avec AniMet du SMC</a>
+</li>
+                                    
+<li>
     <a href="../../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
 </li>
                                     
@@ -55,7 +59,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">Use case: anticipated profits based on precipitations probability</a>
+    <a href="../../../usage/use-case_arthur/use-case_arthur_en" class="dropdown-item">Make WMS Requests from Python /<br>Faire des requêtes WMS avec Python</a>
 </li>
                                     
 <li>
@@ -63,7 +67,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en/" class="dropdown-item">Use case: Retrieving and displaying hydrometric data</a>
+    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en" class="dropdown-item">Make OGC API - Feature requests from Python /<br>Faire des requêtes OGC API - Features avec Python</a>
 </li>
                                     
 <li>
@@ -177,9 +181,8 @@
 <li><a href="https://dd.meteo.gc.ca/model_rdwps/ontario/1km">https://dd.meteo.gc.ca/model_rdwps/ontario/1km/{HH}/</a></li>
 <li><a href="https://dd.meteo.gc.ca/model_rdwps/superior/1km">https://dd.meteo.gc.ca/model_rdwps/superior/1km/{HH}/</a></li>
 </ul>
-<p>Données sur grilles lat-lon tournées:</p>
+<p>Données sur grille lat-lon tournée:</p>
 <ul>
-<li><a href="https://dd.meteo.gc.ca/model_rdwps/atlantic-nw/5km">https://dd.meteo.gc.ca/model_rdwps/atlantic-nw/5km/{HH}/</a></li>
 <li><a href="https://dd.meteo.gc.ca/model_rdwps/national/2.5km">https://dd.meteo.gc.ca/model_rdwps/national/2.5km/{HH}/</a></li>
 </ul>
 <p>où :</p>
@@ -187,6 +190,7 @@
 <li><strong>HH</strong> : Heure UTC du début de la passe du modèle [00, 06, 12, 18].</li>
 </ul>
 <p>Un historique de 24 heures est conservé dans ce répertoire.</p>
+<p>NOTE: Le domaine national est un assemblage en post-traitement de tous les domaines du SRPDV.</p>
 <h2 id="domaines-disponibles">Domaines disponibles</h2>
 <h3 id="lac-superieur">Lac Supérieur</h3>
 <ul>
@@ -312,37 +316,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="nord-ouest-atlantique">Nord-ouest Atlantique</h3>
-<ul>
-<li><strong>Grille lat-lon tournée</strong></li>
-</ul>
-<p><img alt="" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_rdwps/grille_rdwps-nwa.png" /></p>
-<table>
-<thead>
-<tr>
-<th>Paramètre</th>
-<th>Valeur</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ni</td>
-<td>762</td>
-</tr>
-<tr>
-<td>nj</td>
-<td>643</td>
-</tr>
-<tr>
-<td>résolution</td>
-<td>0.045° x 0.045°</td>
-</tr>
-<tr>
-<td>coordonnées du premier point de grille</td>
-<td>41.065° N  255.718° O</td>
-</tr>
-</tbody>
-</table>
 <h3 id="national">National</h3>
 <ul>
 <li><strong>Grille_lat-lon tournée</strong></li>
@@ -385,7 +358,7 @@
 <li><strong>HH</strong> : Heure UTC de la passe [00, 12]</li>
 <li><strong>MSC</strong> : Chaîne de caractères constante indiquant que le Service Météorologique Canadien émet les prévisions</li>
 <li><strong>RDWPS</strong> : Chaîne de caractères constante indiquant que les données proviennent du Système régional de prévision déterministe des vagues</li>
-<li><strong>DOMAIN</strong> : Chaîne de caractères constante indiquant le domaine [erie, huron-michigan, ontario, superior, atlantic-nw]</li>
+<li><strong>DOMAIN</strong> : Chaîne de caractères constante indiquant le domaine [erie, huron-michigan, ontario, superior, national]</li>
 <li><strong>VAR</strong> : Type de variable contenu dans le fichier</li>
 <li><strong>LVL</strong> : Type de niveau vertical [Sfc pour la surface, AGL pour hauteur fixe au-dessus du sol]</li>
 <li><strong>Grille</strong> : Type de grille horizontale [LatLon, RLatLon]</li>
@@ -397,7 +370,6 @@
 <p>Exemples de fichier :</p>
 <ul>
 <li>20211014T00Z_MSC_RDWPS-Lake-Erie_HTSGW_Sfc_LatLon0.009x0.012_PT003H.grib2</li>
-<li>20211014T00Z_MSC_RDWPS-Atlantic-North-West_ICEC_Sfc_RLatLon0.045_PT037H.grib2</li>
 <li>20211014T00Z_MSC_RDWPS_VGRD_AGL-10m_RLatLon0.0225_PT037H.grib2</li>
 </ul>
 <h2 id="niveaux">Niveaux</h2>

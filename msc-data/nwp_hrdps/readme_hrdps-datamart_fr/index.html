@@ -43,6 +43,10 @@
 </li>
                                     
 <li>
+    <a href="../../../msc-animet/readme_en/" class="dropdown-item">Display data and create animations with MSC AniMet /<br>Afficher les données et créer des animations avec AniMet du SMC</a>
+</li>
+                                    
+<li>
     <a href="../../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
 </li>
                                     
@@ -55,7 +59,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">Use case: anticipated profits based on precipitations probability</a>
+    <a href="../../../usage/use-case_arthur/use-case_arthur_en" class="dropdown-item">Make WMS Requests from Python /<br>Faire des requêtes WMS avec Python</a>
 </li>
                                     
 <li>
@@ -63,7 +67,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en/" class="dropdown-item">Use case: Retrieving and displaying hydrometric data</a>
+    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en" class="dropdown-item">Make OGC API - Feature requests from Python /<br>Faire des requêtes OGC API - Features avec Python</a>
 </li>
                                     
 <li>
@@ -285,7 +289,7 @@
 <ul>
 <li>20201123T00Z_MSC_HRDPS_GUST_AGL-10m_RLatLon0.0225_PT012H.grib2</li>
 <li>
-<p>20220821T12Z_MSC_HRDPS-WEonG_VISIFOG_Sfc_RLatLon0.0225_PT024H.grib2</p>
+<p>20220821T12Z_MSC_HRDPS-WEonG_VISIFG_Sfc_RLatLon0.0225_PT024H.grib2</p>
 </li>
 <li>
 <p><strong>Domaine nord (expérimental)</strong></p>
@@ -344,52 +348,52 @@
 </thead>
 <tbody>
 <tr>
-<td>BSNOW</td>
+<td>BSNOW/BLSN</td>
 <td>Présence de poudrerie</td>
 <td>binaire (0/1)</td>
 </tr>
 <tr>
-<td>CFRZR</td>
+<td>CFRZR/PROBFZRA</td>
 <td>Probabilité de pluie verglaçante</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CICEP</td>
+<td>CICEP/PROBPL</td>
 <td>Probabilité de grésil</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CONDARAIN</td>
+<td>CONDARAIN/CANDALPCPN</td>
 <td>Quantité conditionnelle de précipitation liquide</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CONDASNOW</td>
+<td>CONDASNOW/CONDASSN</td>
 <td>Quantité conditionnelle de neige solide</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CONDICEP</td>
+<td>CONDICEP/CANDAPL</td>
 <td>Quantité conditionnelle de granulés de glace solide</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CP</td>
+<td>CP/CHARPCPN</td>
 <td>Caractère de la précipitation</td>
 <td>0=aucune; 1=averse; 2=intermittente; 3=continue</td>
 </tr>
 <tr>
-<td>CRAIN</td>
+<td>CRAIN/PROBRA</td>
 <td>Probabilité de pluie</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CSNOW</td>
+<td>CSNOW/PROBSN</td>
 <td>Probabilité de neige</td>
 <td>%</td>
 </tr>
 <tr>
-<td>DIST</td>
+<td>DIST/ORGPHY</td>
 <td>Orographie du modèle</td>
 <td>m</td>
 </tr>
@@ -399,12 +403,12 @@
 <td>C</td>
 </tr>
 <tr>
-<td>DPTYPE</td>
+<td>DPTYPE/DMNTPCPNTYPE</td>
 <td>Type dominant de précipitation</td>
 <td>101=pluie; 110=grêle; 111=bruine; 203=pluie verglaçante; 212=bruine verglaçante; 308=grésil; 405=neige; 409=granulés de neige; 413=cristaux de glace; 414=grains de neige</td>
 </tr>
 <tr>
-<td>FZPRATE</td>
+<td>DPTYPE/CONDAFZPCPN</td>
 <td>Quantité conditionnelle de précipitation verglaçante</td>
 <td>m</td>
 </tr>
@@ -414,67 +418,67 @@
 <td>m/s</td>
 </tr>
 <tr>
-<td>HSNOWL</td>
+<td>HSNOWL/HGTSNLVL</td>
 <td>Hauteur du niveau de la neige</td>
 <td>m</td>
 </tr>
 <tr>
-<td>LAND</td>
+<td>LAND/WTRLANMASK</td>
 <td>Masque terre/eau</td>
 <td>fraction</td>
 </tr>
 <tr>
-<td>PARAIN</td>
+<td>PARAIN/PROBLPCPN</td>
 <td>Probabilité de précipitation liquide</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PBSNOW</td>
+<td>PBSNOW/PROBBLSN</td>
 <td>Probabilité de poudrerie</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PDZ</td>
+<td>PDZ/PROBDZ</td>
 <td>Probabilité de bruine</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PFRDZ</td>
+<td>PFRDZ/PROBFZDZ</td>
 <td>Probabilité de bruine verglaçante</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PFRZR</td>
+<td>PFRZR/PROBFZPCPN</td>
 <td>Probabilité de précipitation verglaçante</td>
 <td>%</td>
 </tr>
 <tr>
-<td>POP</td>
+<td>POP/PROBPCPN</td>
 <td>Probabilité de précipitation</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PRATE</td>
+<td>PRATE/CONDAPCPN</td>
 <td>Quantité conditionnelle de précipitation</td>
 <td>m</td>
 </tr>
 <tr>
-<td>PSNOWS</td>
+<td>PSNOWS/PROBSNSQ</td>
 <td>Probabilité de bourrasque de neige</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PTYPE</td>
+<td>PTYPE/PCPNTYPE</td>
 <td>Type de précipitation instantanée</td>
 <td>1=pluie; 2=pluie/neige; 3=pluie verglaçante; 4=grésil; 5=neige; 6=aucune; 7=bruine; 8=bruine verglaçante; 9=précipitation verglaçante/grésil</td>
 </tr>
 <tr>
-<td>SCNDPTYPE</td>
+<td>SCNDPTYPE/SCNDPCPNTYPE</td>
 <td>Type de précipitation secondaire</td>
 <td>101=pluie; 110=grêle; 111=bruine; 203=pluie verglaçante; 212=bruine verglaçante; 308=grésil; 405=neige; 409=granulés de neige; 413=cristaux de glace; 414=grains de neige</td>
 </tr>
 <tr>
-<td>SK</td>
+<td>SK/SKSTATE</td>
 <td>Etat du ciel jour/nuit (couverture et opacité nuageuse combinées)</td>
 <td>0-1=ensoleillé/dégagé; 2-3=généralement ensoleillé/quelques nuages; 4-5-6=alternance de soleil et de nuages/partiellement nuageux; 7-8=généralement nuageux/généralement nuageux; 9=nuageux/nuageux; 10=nuageux/couvert</td>
 </tr>
@@ -484,22 +488,22 @@
 <td>C</td>
 </tr>
 <tr>
-<td>TPII</td>
+<td>TPII/TPCPNINTSTI</td>
 <td>Indice d'intensité des précipitations totales</td>
 <td>0=aucune intensité; 1=faible; 2=modéré; 3=fort</td>
 </tr>
 <tr>
-<td>TSTM</td>
+<td>TSTM/PROBTSOCRNC</td>
 <td>Probabilité d'occurence d'orage</td>
 <td>%</td>
 </tr>
 <tr>
-<td>VISIFOG</td>
+<td>VISIFOG/VISIFG</td>
 <td>Visibilité dans le brouillard glacé</td>
 <td>m</td>
 </tr>
 <tr>
-<td>VISLFOG</td>
+<td>VISLFOG/VISLFG</td>
 <td>Visibilité à travers le brouillard liquide</td>
 <td>m</td>
 </tr>
@@ -509,7 +513,7 @@
 <td>Degré vrai</td>
 </tr>
 <tr>
-<td>WIND</td>
+<td>WIND/WSPD</td>
 <td>Vitesse du vent</td>
 <td>m/s</td>
 </tr>

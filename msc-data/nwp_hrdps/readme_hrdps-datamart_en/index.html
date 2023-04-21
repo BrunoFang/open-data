@@ -43,6 +43,10 @@
 </li>
                                     
 <li>
+    <a href="../../../msc-animet/readme_en/" class="dropdown-item">Display data and create animations with MSC AniMet /<br>Afficher les données et créer des animations avec AniMet du SMC</a>
+</li>
+                                    
+<li>
     <a href="../../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
 </li>
                                     
@@ -55,7 +59,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_arthur/use-case_arthur_en/" class="dropdown-item">Use case: anticipated profits based on precipitations probability</a>
+    <a href="../../../usage/use-case_arthur/use-case_arthur_en" class="dropdown-item">Make WMS Requests from Python /<br>Faire des requêtes WMS avec Python</a>
 </li>
                                     
 <li>
@@ -63,7 +67,7 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en/" class="dropdown-item">Use case: Retrieving and displaying hydrometric data</a>
+    <a href="../../../usage/use-case_oafeat/use-case_oafeat-script_en" class="dropdown-item">Make OGC API - Feature requests from Python /<br>Faire des requêtes OGC API - Features avec Python</a>
 </li>
                                     
 <li>
@@ -285,7 +289,7 @@
 <ul>
 <li>20201123T00Z_MSC_HRDPS_GUST_AGL-10m_RLatLon0.0225_PT012H.grib2</li>
 <li>
-<p>20220821T12Z_MSC_HRDPS-WEonG_VISIFOG_Sfc_RLatLon0.0225_PT024H.grib2</p>
+<p>20220821T12Z_MSC_HRDPS-WEonG_VISIFG_Sfc_RLatLon0.0225_PT024H.grib2</p>
 </li>
 <li>
 <p><strong>North domain (experimental)</strong></p>
@@ -346,52 +350,52 @@
 </thead>
 <tbody>
 <tr>
-<td>BSNOW</td>
+<td>BSNOW/BLSN</td>
 <td>Presence of blowing snow</td>
 <td>binary (0/1)</td>
 </tr>
 <tr>
-<td>CFRZR</td>
+<td>CFRZR/PROBFZRA</td>
 <td>Probability of freezing rain</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CICEP</td>
+<td>CICEP/PROBPL</td>
 <td>Probability of ice pellets</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CONDARAIN</td>
+<td>CONDARAIN/CONDALPCPN</td>
 <td>Conditional amount of liquid precipitation</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CONDASNOW</td>
+<td>CONDASNOW/CONDASSN</td>
 <td>Conditional amount of solid snow</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CONDICEP</td>
+<td>CONDICEP/CONDAPL</td>
 <td>Conditional amount of solide ice pellets</td>
 <td>m</td>
 </tr>
 <tr>
-<td>CP</td>
+<td>CP/CHARPCPN</td>
 <td>Character of precipitation</td>
 <td>0=none; 1=showers; 2=intermittent; 3=continuous</td>
 </tr>
 <tr>
-<td>CRAIN</td>
+<td>CRAIN/PROBRA</td>
 <td>Probability of rain</td>
 <td>%</td>
 </tr>
 <tr>
-<td>CSNOW</td>
+<td>CSNOW/PROBSN</td>
 <td>Probability of snow</td>
 <td>%</td>
 </tr>
 <tr>
-<td>DIST</td>
+<td>DIST/ORGPHY</td>
 <td>Model orography</td>
 <td>m</td>
 </tr>
@@ -401,12 +405,12 @@
 <td>C</td>
 </tr>
 <tr>
-<td>DPTYPE</td>
+<td>DPTYPE/DMNTPCPNTYPE</td>
 <td>Dominant precipitation type</td>
 <td>101=rain; 110=hail; 111=drizzle; 203=freezing rain; 212=freezing drizzle; 308=ice pellets; 405=snow; 409=snow pellets; 413=ice crystals; 414=snow grains</td>
 </tr>
 <tr>
-<td>FZPRATE</td>
+<td>FZPRATE/CONDAFZPCPN</td>
 <td>Conditional freezing precipitation amount</td>
 <td>m</td>
 </tr>
@@ -416,67 +420,67 @@
 <td>m/s</td>
 </tr>
 <tr>
-<td>HSNOWL</td>
+<td>HSNOWL/HGTSNLVL</td>
 <td>Height of snow level</td>
 <td>m</td>
 </tr>
 <tr>
-<td>LAND</td>
+<td>LAND/WTRLANMASK</td>
 <td>Water/land mask</td>
 <td>fraction</td>
 </tr>
 <tr>
-<td>PARAIN</td>
+<td>PARAIN/PROBLPCPN</td>
 <td>Probability of liquid precipitation</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PBSNOW</td>
+<td>PBSNOW/PROBBLSN</td>
 <td>Probability of blowing snow</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PDZ</td>
+<td>PDZ/PROBDZ</td>
 <td>Probability of drizzle</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PFRDZ</td>
+<td>PFRDZ/PROBFZDZ</td>
 <td>Probability of freezing drizzle</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PFRZR</td>
+<td>PFRZR/PROBFZPCPN</td>
 <td>Probability of freezing precipitation</td>
 <td>%</td>
 </tr>
 <tr>
-<td>POP</td>
+<td>POP/PROBPCPN</td>
 <td>Probability of precipitation</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PRATE</td>
+<td>PRATE/CONDAPCPN</td>
 <td>Conditional precipitation rate</td>
 <td>m</td>
 </tr>
 <tr>
-<td>PSNOWS</td>
+<td>PSNOWS/PROBSNSQ</td>
 <td>Probability of snow squalls</td>
 <td>%</td>
 </tr>
 <tr>
-<td>PTYPE</td>
+<td>PTYPE/PCPNTYPE</td>
 <td>Instantaneous precipitation type</td>
 <td>1=rain; 2=rain/snow; 3=freezing rain; 4=ice pellets; 5=snow; 6=none; 7=drizzle; 8=freezing drizzlee; 9=freezing rain/ice pellets</td>
 </tr>
 <tr>
-<td>SCNDPTYPE</td>
+<td>SCNDPTYPE/SCNDPCPNTYPE</td>
 <td>Secondary precipitation type</td>
 <td>101=rain; 110=hail; 111=drizzle; 203=freezing rain; 212=freezing drizzle; 308=ice pellets; 405=snow; 409=snow pellets; 413=ice crystals; 414=snow grains</td>
 </tr>
 <tr>
-<td>SK</td>
+<td>SK/SKSTATE</td>
 <td>day/night sky state (combined cloud cover and opacity)</td>
 <td>0-1=sunny/clear; 2-3=mainly sunny/cloudy periods; 4-5-6=mix of sun and clouds/partly cloudy; 7-8=mainly cloudy/mainly cloudy; 9=cloudy/cloudy; 10=cloudy/overcast</td>
 </tr>
@@ -486,22 +490,22 @@
 <td>C</td>
 </tr>
 <tr>
-<td>TPII</td>
+<td>TPII/TPCPNINTSTI</td>
 <td>Total precipitation intensity index</td>
 <td>0=no intensity; 1=light; 2=moderate; 3=heavy</td>
 </tr>
 <tr>
-<td>TSTM</td>
+<td>TSTM/PROBTSOCRNC</td>
 <td>Probability of thunderstorm occurence</td>
 <td>%</td>
 </tr>
 <tr>
-<td>VISIFOG</td>
+<td>VISIFOG/VISIFG</td>
 <td>Visibility through ice fog</td>
 <td>m</td>
 </tr>
 <tr>
-<td>VISLFOG</td>
+<td>VISLFOG/VISLFG</td>
 <td>Visibility through liquid fog</td>
 <td>m</td>
 </tr>
@@ -511,7 +515,7 @@
 <td>True degree</td>
 </tr>
 <tr>
-<td>WIND</td>
+<td>WIND/WSPD</td>
 <td>Wind speed</td>
 <td>m/s</td>
 </tr>
