@@ -150,7 +150,7 @@
             
             <li class="nav-item" data-level="1"><a href="#usage" class="nav-link">Usage</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#1-add-weather-layers" class="nav-link">1 - Add weather layers</a>
+            <li class="nav-item" data-level="2"><a href="#1-add-weather-and-climate-layers" class="nav-link">1 - Add weather and climate layers</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -196,7 +196,7 @@
 <h1 id="msc-animet">MSC AniMet</h1>
 <p>MSC AniMet is a simple tool enabling users to interact with MSC Open Data weather data and create custom weather animations for any area in the world. The resulting animations can be downloaded and shared with a permalink.</p>
 <p>MSC AniMet can be used to showcase a diversity of weather events such as storms, heat waves, hurricane trajectories, air quality events, extreme wind gusts, and much more.</p>
-<p>In its current incarnation, MSC AniMet provides access to <a href="../../msc-geomet/readme_en/">GeoMet-Weather</a> layers.</p>
+<p>MSC AniMet provides access to <a href="../../msc-geomet/readme_en/">GeoMet-Weather and GeoMet-Climate</a> layers.</p>
 <h1 id="access">Access</h1>
 <p><strong>Access to MSC AniMet: <a href="https://eccc-msc.github.io/msc-animet/">https://eccc-msc.github.io/msc-animet/</a></strong></p>
 <p>A simple example of an MSC AniMet animation with a single radar layer:</p>
@@ -207,19 +207,25 @@
 <h1 id="usage">Usage</h1>
 <p>The main usage workflow:</p>
 <ol>
-<li>Add weather layers to the map</li>
+<li>Add weather and climate layers to the map</li>
 <li>Customize the content of the map</li>
 <li>Configure the animation</li>
 <li>Create and share the map and animation</li>
 </ol>
-<h2 id="1-add-weather-layers">1 - Add weather layers</h2>
-<p>Add layers in the <code>Add GeoMet-Weather layers</code> panel:</p>
+<h2 id="1-add-weather-and-climate-layers">1 - Add weather and climate layers</h2>
+<p>Layers: </p>
 <ul>
+<li>Add layers from the <code>GeoMet-Weather</code> or <code>GeoMet-Climate</code> panel</li>
 <li>Browse the layer tree to find the desired layer</li>
 <li>Use the search box to filter available layers</li>
 <li>Click on the <code>+</code> sign to add a layer to the map</li>
+<li>Tip: click on the panel name to expand or collapse the layer list</li>
 </ul>
-<p>Tip: click on the panel name, <code>Add GeoMet-Weather layers</code>, to expand or collapse the panel.</p>
+<p>Overlays: </p>
+<ul>
+<li>Select the 'Overlays' panel to add information on top of displayed layers</li>
+<li>Currently available overlays are Canadian geopolitical boundaries, cities and waterbodies from Natural Resource Canada. They are available only at certain zoom levels.</li>
+</ul>
 <h2 id="2-customize-content-of-the-map">2 - Customize content of the map</h2>
 <p>Configure layers in the <code>Layers configuration</code> panel and customize the map.</p>
 <p>Layers:</p>
@@ -230,7 +236,7 @@
 <li>View and select the layer color ramp from available styles</li>
 <li>Adjust layer opacity</li>
 <li>Toggle layer visibility</li>
-<li>A layer visibility eye icon will turn red if there is no overlap with the selected temporal range</li>
+<li>A layer's visibility eye icon will turn red if the current map time is outside of the layer's temporal range</li>
 </ul>
 <p>Time:</p>
 <ul>

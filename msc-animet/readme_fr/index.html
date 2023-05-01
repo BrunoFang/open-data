@@ -140,7 +140,7 @@
             
             <li class="nav-item" data-level="1"><a href="#utilisation" class="nav-link">Utilisation</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#1-ajouter-des-couches-meteorologiques" class="nav-link">1 - Ajouter des couches météorologiques</a>
+            <li class="nav-item" data-level="2"><a href="#1-ajouter-des-couches-meteorologiques-et-climatiques" class="nav-link">1 - Ajouter des couches météorologiques et climatiques</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -186,7 +186,7 @@
 <h1 id="animet-du-smc">AniMet du SMC</h1>
 <p>AniMet du SMC est un outil simple permettant aux utilisateurs d'interagir avec les données météorologiques ouvertes du SMC et de créer des animations météorologiques personnalisées pour n'importe quelle région du monde. Les animations résultantes peuvent être téléchargées et partagées avec un permalien.</p>
 <p>AniMet du SMC peut être utilisé pour présenter une variété d'événements météorologiques tels que les tempêtes, les vagues de chaleur, les trajectoires d'ouragans, les événements liés à la qualité de l'air, les rafales de vent extrêmes, et bien plus encore.</p>
-<p>Dans sa version actuelle, AniMet du SMC donne accès aux couches de <a href="../../msc-geomet/readme_fr/">GeoMet-Météo</a>.</p>
+<p>AniMet du SMC donne accès aux couches de <a href="../../msc-geomet/readme_fr/">GeoMet-Météo et GeoMet-Climat</a>.</p>
 <h1 id="acces">Accès</h1>
 <p><strong>Accès à AniMet du SMC : <a href="https://eccc-msc.github.io/msc-animet/">https://eccc-msc.github.io/msc-animet/</a></strong></p>
 <p>Un exemple simple de l'animation d'une couche radar créée avec AniMet du SMC :</p>
@@ -197,19 +197,25 @@
 <h1 id="utilisation">Utilisation</h1>
 <p>Les principales étapes d'utilisation :</p>
 <ol>
-<li>Ajouter des couches météorologiques à la carte</li>
+<li>Ajouter des couches météorologiques et climatiques à la carte</li>
 <li>Personnaliser le contenu de la carte</li>
 <li>Configurer l'animation</li>
 <li>Créer et partager la carte et l'animation</li>
 </ol>
-<h2 id="1-ajouter-des-couches-meteorologiques">1 - Ajouter des couches météorologiques</h2>
-<p>Ajouter des couches dans le panneau <code>Ajouter des couches GeoMet-Météo</code> :</p>
+<h2 id="1-ajouter-des-couches-meteorologiques-et-climatiques">1 - Ajouter des couches météorologiques et climatiques</h2>
+<p>Couches : </p>
 <ul>
+<li>Ajouter des couches dans le panneau <code>GeoMet-Météo</code> ou <code>GeoMet-Climat</code></li>
 <li>Parcourir l'arborescence des couches pour trouver la couche désirée</li>
 <li>Utiliser la boîte de recherche pour filtrer parmi les couches disponibles</li>
 <li>Cliquer sur le signe <code>+</code> pour ajouter une couche à la carte</li>
+<li>Astuce : cliquer sur le nom du panneau pour agrandir ou réduire la liste de couches</li>
 </ul>
-<p>Astuce : cliquer sur le nom du panneau, <code>Ajouter des couches GeoMet-Météo</code>, pour agrandir ou réduire le panneau.</p>
+<p>Superpositions :</p>
+<ul>
+<li>Sélectionner le panneau 'Superpositions' pour ajouter de l'information au-dessus des couches affichées</li>
+<li>Les superpositions présentement disponibles sont les frontières géopolitiques, les villes et les délimitations des plans d'eau candiens en provenance de Ressources naturelles Canada. Ces couches ne sont disponibles qu'à certains niveaux de zoom.</li>
+</ul>
 <h2 id="2-personnaliser-le-contenu-de-la-carte">2 - Personnaliser le contenu de la carte</h2>
 <p>Configurer les couches dans le panneau <code>Configuration des couches</code> et personnaliser la carte.</p>
 <p>Couches :</p>
@@ -220,7 +226,7 @@
 <li>Visualiser et sélectionner la palette de couleurs de la couche à partir des styles disponibles</li>
 <li>Ajuster l'opacité des couches</li>
 <li>Activer la visibilité des couches</li>
-<li>L'icone de la visibilité d'une couche deviendra rouge s'il n'y a pas de chevauchement avec la plage temporelle choisie</li>
+<li>L'icone de la visibilité d'une couche deviendra rouge si la date de la carte est à l'extérieur de la plage temporelle pour cette couche</li>
 </ul>
 <p>Temps :</p>
 <ul>
@@ -233,7 +239,7 @@
 <p>Carte :</p>
 <ul>
 <li>Agrandir et déplacer la carte sur votre zone d'intérêt</li>
-<li>Redimensionner la carte et l'animation à l'aide de l'outil située dans le coin inférieur droit de la carte</li>
+<li>Redimensionner la carte et l'animation à l'aide de l'outil situé dans le coin inférieur droit de la carte</li>
 <li>Pivoter la carte en appuyant sur les touches <em>alt-shift</em> et en faisant glisser la carte</li>
 </ul>
 <h2 id="3-configurer-lanimation">3 - Configurer l'animation</h2>
@@ -260,7 +266,7 @@
 <h2 id="code-source">Code source</h2>
 <p>Le code source d'AniMet du SMC est disponible publiquement sur GitHub : <a href="https://github.com/ECCC-MSC/msc-animet">https://github.com/ECCC-MSC/msc-animet</a></p>
 <h2 id="support">Support</h2>
-<p>AniMet du SMC est un outil de démonstration des données ouvertes du SMC et ne bénéficie pas d'un support opérationnel. Le support aux utilisateurs est oofert sur la base du meilleur effort durant les heures de travail normales. Les utilisateurs qui souhaitent obtenir du support sont invités à <a href="https://www.meteo.gc.ca/mainmenu/contact_us_f.html">nous contacter</a>.</p></div>
+<p>AniMet du SMC est un outil de démonstration des données ouvertes du SMC et ne bénéficie pas d'un support opérationnel. Le support aux utilisateurs est offert sur la base du meilleur effort durant les heures de travail normales. Les utilisateurs qui souhaitent obtenir du support sont invités à <a href="https://www.meteo.gc.ca/mainmenu/contact_us_f.html">nous contacter</a>.</p></div>
             </div>
         </div>
 
