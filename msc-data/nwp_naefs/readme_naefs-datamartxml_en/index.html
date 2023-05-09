@@ -182,19 +182,20 @@
 </ul>
 <p>A history of 30 days of forecast is kept in this directory.</p>
 <h2 id="nomenclature-of-file-directories">Nomenclature of file directories</h2>
-<p>NOTE : ALL HOURS ARE IN UTC.</p>
 <p>The files are grouped in a directory tree that is based on the date
 and the variable contained in the XML files. The directories have the 
 following nomenclature:</p>
 <ul>
 <li><a href="https://dd.weatheroffice.gc.ca/ensemble/naefs/xml">https://dd.weather.gc.ca/ensemble/naefs/xml/{AAAAMMJJ}/{ZZ}/{VARIABLE}/{TYPE}</a></li>
 </ul>
-<p>where :
-* <strong>AAAAMMJJ</strong> : Forecast integration date, year (YYYY), month (MM) and day (DD)
-* <strong>ZZ</strong> : Forecast integration time in UTC. Can be '00' or  '12'
-* <strong>VARIABLE</strong> : Variable in the XML files in the directory. Refer to the 'Variable List' section below for a complete list.
-* <strong>TYPE</strong> : Data type. Currently, only the direct model output ('raw') are
-available.</p>
+<p>where :</p>
+<ul>
+<li><strong>AAAAMMJJ</strong> : Forecast integration date, year (YYYY), month (MM) and day (DD)</li>
+<li><strong>ZZ</strong> : Forecast integration time in UTC. Can be '00' or  '12'</li>
+<li><strong>VARIABLE</strong> : Variable in the XML files in the directory. Refer to the 'Variable List' section below for a complete list.</li>
+<li><strong>TYPE</strong> : Data type. Currently, only the direct model output ('raw') are
+available.</li>
+</ul>
 <p>Example : for the 12Z forecast on May 7th 2010, the raw data for the
 surface wind speed will be in this directory :</p>
 <p><a href="https://dd.weatheroffice.gc.ca/ensemble/naefs/xml/20100507/12/WIND-SFC/raw/">https://dd.weatheroffice.gc.ca/ensemble/naefs/xml/20100507/12/WIND-SFC/raw/</a></p>

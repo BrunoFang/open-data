@@ -128,7 +128,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#donnees-climatiques-normales-donnees-quotidiennes-sommaires-mensuels-en-format-csv" class="nav-link">Données climatiques (normales, données quotidiennes, sommaires mensuels) en format CSV</a>
+            <li class="nav-item" data-level="1"><a href="#donnees-climatiques-normales-donnees-quotidiennes-et-horaires-sommaires-mensuels-en-format-csv" class="nav-link">Données climatiques (normales, données quotidiennes et horaires, sommaires mensuels) en format CSV</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#adresse-des-donnees" class="nav-link">Adresse des données</a>
               <ul class="nav flex-column">
@@ -163,9 +163,9 @@
 
 <p><a href="../readme_climateobs-datamart_en/">In English</a></p>
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
-<p><a href="../../../readme_fr/">TdM</a> &gt; <a href="../../readme_fr/">Données du SMC</a> &gt; <a href="../readme_climateobs_fr/">Données climatiques (normales, données quotidiennes, sommaires mensuels)</a> &gt; Données climatiques (normales, données quotidiennes, sommaires mensuels) sur le Datamart du SMC</p>
-<h1 id="donnees-climatiques-normales-donnees-quotidiennes-sommaires-mensuels-en-format-csv">Données climatiques (normales, données quotidiennes, sommaires mensuels) en format CSV</h1>
-<p>Ce document décrit les trois jeux de données climatiques, normales climatiques, observations quotidiennes et sommaires mensuels disponibles, en format CSV.</p>
+<p><a href="../../../readme_fr/">TdM</a> &gt; <a href="../../readme_fr/">Données du SMC</a> &gt; <a href="../readme_climateobs_fr/">Données climatiques (normales, données quotidiennes et horaires, sommaires mensuels)</a> &gt; Données climatiques (normales, données quotidiennes et horaires, sommaires mensuels) sur le Datamart du SMC</p>
+<h1 id="donnees-climatiques-normales-donnees-quotidiennes-et-horaires-sommaires-mensuels-en-format-csv">Données climatiques (normales, données quotidiennes et horaires, sommaires mensuels) en format CSV</h1>
+<p>Ce document décrit les quatre jeux de données climatiques, normales climatiques, observations quotidiennes et horaires ainsi que les sommaires mensuels disponibles, en format CSV.</p>
 <h2 id="adresse-des-donnees">Adresse des données</h2>
 <p>Les données du Datamart du SMC peuvent être <a href="../../../msc-datamart/amqp_fr/">automatiquement récupérées avec le protocole avancé de mise en file d'attente des messages (AMQP)</a> dès qu'elles deviennent disponibles. Un <a href="../../../usage/readme_fr/">survol et exemples pour accéder et utiliser les données ouvertes du Service météorologique du Canada</a> est également disponible.</p>
 <p>Les données climatiques sont disponibles via le protocole HTTPS. Il est possible de les télécharger avec un fureteur standard.</p>
@@ -173,27 +173,30 @@
 <ul>
 <li><a href="https://dd.meteo.gc.ca/climate/observations/normals/csv/1981-2010">https://dd.meteo.gc.ca/climate/observations/normals/csv/1981-2010/{[AB,BC,MB,NB,NL,NS,NT,NU,ON,PE,QC,SK,YT]}</a></li>
 <li><a href="https://dd.meteo.gc.ca/climate/observations/daily/csv">https://dd.meteo.gc.ca/climate/observations/daily/csv/{[AB,BC,MB,NB,NL,NS,NT,NU,ON,PE,QC,SK,YT]}</a></li>
+<li><a href="https://dd.meteo.gc.ca/climate/observations/hourly/csv">https://dd.meteo.gc.ca/climate/observations/hourly/csv/{[AB,BC,MB,NB,NL,NS,NT,NU,ON,PE,QC,SK,YT]}</a></li>
 <li><a href="https://dd.meteo.gc.ca/climate/observations/monthly/csv">https://dd.meteo.gc.ca/climate/observations/monthly/csv/{[AB,BC,MB,NB,NL,NS,NT,NU,ON,PE,QC,SK,YT]}</a></li>
 </ul>
 <p>avec :</p>
 <ul>
 <li><strong>normals</strong> : Les normales et moyennes climatiques servent à résumer ou à décrire les conditions climatiques moyennes d'un endroit donné, basées sur au moins 15 années de données entre 1981 à 2010.</li>
 <li><strong>daily</strong> : Données quotidiennes provenant de stations climatiques quotidiennes et de stations horaires.</li>
+<li><strong>hourly</strong> : Données horaires provenant de stations horaires.</li>
 <li><strong>monthly</strong> : Sommaire transcanadien des moyennes et des extrêmes pour le mois, y compris les précipitations totales, les températures maximales et minimales et les degrés-jours. Ces données sont disponibles qui produisent des données quotidiennes.</li>
 <li><strong>(AB,BC,MB,NB,NL,NS,NT,NU,ON,PE,QC,SK,YT)</strong> : liste des 13 provinces/territoires.</li>
 </ul>
 <h2 id="nomenclature-des-noms-de-fichiers">Nomenclature des noms de fichiers</h2>
-<p>NOTE : TOUTES LES HEURES SONT EN UTC.</p>
 <ul>
 <li>climate_normals_PROVTERR_XXXXXXX_YYY1-YYY2.csv</li>
 <li>climate_daily_PROVTERR_XXXXXXX_YYYY-MM_P1D.csv</li>
+<li>climate_hourly_PROVTERR_XXXXXXX_YYYY_P1H.csv</li>
 <li>climate_monthly_PROVTERR_XXXXXXX_YYYY_P1M.csv</li>
 </ul>
 <p>avec :</p>
 <ul>
 <li><strong>climate</strong> : Chaîne constante indiquant la source des données, soit les données climatiques</li>
-<li><strong>normals</strong> : Chaîne constante indiquant les données climatiques qui contribuent de façon critique à la caractérisation du climat de la Terre </li>
-<li><strong>daily</strong> : Chaîne constante indiquant les données climatiques quotidiennes </li>
+<li><strong>normals</strong> : Chaîne constante indiquant les données climatiques qui contribuent de façon critique à la caractérisation du climat de la Terre</li>
+<li><strong>daily</strong> : Chaîne constante indiquant les données climatiques quotidiennes</li>
+<li><strong>hourly</strong> : Chaîne constante indiquant les données climatiques horaires</li>
 <li><strong>monthly</strong> : Chaîne constante indiquant les données climatiques mensuelles</li>
 <li><strong>PROVTERR</strong> : Code de 2 lettres pour les provinces et territoires et une chaîne de caractères pour la couverture nationale. Le code prend l’une des 13 valeurs suivantes :<ul>
 <li>AB (Alberta)</li>
@@ -217,13 +220,15 @@
 <li><strong>YYYY</strong> : Année des données climatiques quotidiennes/mensuelles </li>
 <li><strong>MM</strong> : Mois des données climatiques quotidiennes </li>
 <li><strong>P1D</strong> : Chaîne constante indiquant un pas de temps de 1 jour (standard ISO8601)</li>
+<li><strong>P1H</strong> : Chaîne constante indiquant un pas de temps de 1 heure (standard ISO8601)</li>
 <li><strong>P1M</strong> : Chaîne constante indiquant un pas de temps de 1 mois (standard ISO8601)</li>
 <li><strong>csv</strong> : Chaîne constante indiquant le format CSV</li>
 </ul>
 <p>Exemples :</p>
 <ul>
 <li>climate_normals_QC_7040446_1981-2010.csv </li>
-<li>climate_daily_QC_7025280_1993-03_P1D.csv </li>
+<li>climate_daily_QC_7025280_1993-03_P1D.csv</li>
+<li>climate_hourly_MB_5010480_1977_P1H.csv</li>
 <li>Climate_monthly_QC_7025280_2001_P1M.csv</li>
 </ul>
 <p>Note : La liste des codes de stations est disponible à l'adresse https://drive.google.com/drive/folders/1WJCDEU34c60IfOnG4rv5EPZ4IhhW9vZH</p>
@@ -232,6 +237,7 @@
 <ul>
 <li><a href="https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/centre-canadien-services-climatiques/afficher-telecharger/documentation-technique-normales-climatiques.html#toc1">Normales climatiques</a></li>
 <li><a href="https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/centre-canadien-services-climatiques/afficher-telecharger/documentation-technique-donnees-quotidiennes.html#toc0">Données quotidiennes</a></li>
+<li><a href="https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/centre-canadien-services-climatiques/afficher-telecharger/documentation-technique-donnees-horaires.html#toc0">Données horaires</a></li>
 <li><a href="https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/centre-canadien-services-climatiques/afficher-telecharger/documentation-technique-sommaires-climatologiques-mensuels.html#toc0">Sommaires climatiques mensuels</a></li>
 </ul>
 <h2 id="contenu-des-fichiers">Contenu des fichiers</h2>
@@ -247,9 +253,16 @@
 <li><strong>Données quotidiennes</strong></li>
 </ul>
 <p>Les données quotidiennes proviennent de deux sources de données.  Les premières sont les stations climatiques quotidiennes produisant une ou deux observations par jour de température et de précipitations.  Les secondes sont les stations horaires (voir les séries de données horaires) qui produisent généralement plus d'éléments météorologiques, par ex. vent ou neige au sol.</p>
-<p>Les données sont disponibles pour le station actuellement opérationnelles avec de longues périodes d’enregistrement.</p>
+<p>Les données sont disponibles pour les stations actuellement opérationnelles avec de longues périodes d’enregistrement.</p>
 <p>Voir la documentation détaillée ici :</p>
 <p><a href="https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/centre-canadien-services-climatiques/afficher-telecharger/documentation-technique-donnees-quotidiennes.html">https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/centre-canadien-services-climatiques/afficher-telecharger/documentation-technique-donnees-quotidiennes.html</a></p>
+<ul>
+<li><strong>Données horaires</strong></li>
+</ul>
+<p>Les données horaires proviennent des stations horaires (voir les séries de données horaires) qui produisent généralement plusieurs éléments météorologiques, par ex. vent ou neige au sol.</p>
+<p>Les données sont disponibles pour les stations actuellement opérationnelles avec de longues périodes d’enregistrement.</p>
+<p>Voir la documentation détaillée ici :</p>
+<p><a href="https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/centre-canadien-services-climatiques/afficher-telecharger/documentation-technique-donnees-horaires.html">https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/centre-canadien-services-climatiques/afficher-telecharger/documentation-technique-donnees-horaires.html</a></p>
 <ul>
 <li><strong>Données mensuelles</strong></li>
 </ul>
